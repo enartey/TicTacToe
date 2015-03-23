@@ -89,4 +89,13 @@ proto = {
 		// code to end/reset the game
 	}
 
+	checkDiag: function(i, j, p){
+		var acc = 1;
+		while(acc < boardSize){
+			if(checkUL(i, j, p)){
+				acc += 1;
+				
+			}
+		};
+	}
 };
