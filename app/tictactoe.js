@@ -24,7 +24,9 @@ function size(){
 	prompt.start();
 
 	// Get board size from the user
-	prompt.get(["boardsize"], )
+	prompt.get([ "boardsize" ], function(result){
+		console.log("boardsize: " + result.boardsize);
+	} );
 }
 
 
