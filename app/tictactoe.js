@@ -10,7 +10,6 @@ var index, board, proto;
 /* creates two dimensional game board of any size using a nested array */
 function makeBoard(){
 	board = Object.create(proto);
-	board.initialize;
 	return board;
 }
 
@@ -88,15 +87,14 @@ proto = {
 
 	winner: function(){
 		// code to end/reset the game
-	}
+	},
 
 	checkDiag: function(i, j, p){
 		var acc = 1;
-		while(acc < boardSize){
-			if(checkUL(i, j, p)){
+		while (acc < boardSize){
+			if (this.checkUL(i, j, p)){
 				acc += 1;
-				
 			}
-		};
+		}
 	}
 };
