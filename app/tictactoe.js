@@ -10,6 +10,7 @@ var index, board, proto;
 /* creates two dimensional game board of any size using a nested array */
 function makeBoard(){
 	board = Object.create(proto);
+	makeBoard.initialize(size());
 	return board;
 }
 
@@ -17,7 +18,7 @@ function makeBoard(){
 	Accepts the required board size from the user and 
 	uses it to create the board
 */
-function size(){
+	function size(){
 	var prompt = require("prompt");
 
 	// Start the prompt
@@ -27,6 +28,7 @@ function size(){
 	prompt.get([ "boardsize" ], function(result){
 		console.log("boardsize: " + result.boardsize);
 	} );
+	return result.boardsize;
 }
 
 
