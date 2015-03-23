@@ -10,7 +10,7 @@ var index, board, proto;
 /* creates two dimensional game board of any size using a nested array */
 function makeBoard(){
 	board = Object.create(proto);
-	makeBoard.initialize(size());
+	board.initialize(size());
 	return board;
 }
 
