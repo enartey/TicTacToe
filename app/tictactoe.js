@@ -40,4 +40,13 @@ proto = {
 		};
 	},
 
+	checkDR: function(i, j, p){
+		if(this[i-1][j+1] === p){
+			return true;
+		};
+		else{
+			return false;
+		};
+	},
+
 };
