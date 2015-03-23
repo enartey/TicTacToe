@@ -13,6 +13,20 @@ function makeBoard(){
 	return board;
 }
 
+/*
+	Accepts the required board size from the user and 
+	uses it to create the board
+*/
+function size(){
+	var prompt = require("prompt");
+
+	// Start the prompt
+	prompt.start();
+
+	// Get board size from the user
+	prompt.get(["boardsize"], )
+}
+
 
 proto = {
 	initialize: function(boardSize){
