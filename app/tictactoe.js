@@ -85,5 +85,8 @@ proto = {
 		return false;
 	},
 
+	winner: function(){
+		// code to end/reset the game
+	}
 
 };
