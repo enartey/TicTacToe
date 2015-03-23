@@ -16,15 +16,15 @@ function makeBoard(){
 
 proto = {
 	initialize: function(boardSize){
-		var arr = [], index1, index2;
-		while (index1 < boardSize){
-			index2 = 0;
-			arr[ index1 ] = [];
-			while (index2 < boardSize){
-				arr[ index1 ][ index2 ] = null;
-				index2 += 1;
+		var arr = [], i, j;
+		while (i < boardSize){
+			j = 0;
+			arr[ i ] = [];
+			while (j < boardSize){
+				arr[ i ][ j ] = null;
+				j += 1;
 			}
-			index1 += 1;
+			i += 1;
 		}
 		return arr;
 	},
