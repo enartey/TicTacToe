@@ -4,7 +4,7 @@
 	a winner
 */
 
-var index, boardSize, board, proto;
+var index, boardSize, board, proto, i, j, p;
 
 
 /* creates two dimensional game board of any size using a nested array */
@@ -29,6 +29,15 @@ proto = {
 			index1 += 1;
 		}
 		return arr;
-	}
+	},
+
+	checkDL: function(i, j, p){
+		if(this[i-1][j-1] === p){
+			return true;
+		};
+		else{
+			return false;
+		};
+	},
 
 };
