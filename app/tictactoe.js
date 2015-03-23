@@ -35,18 +35,57 @@ proto = {
 		if(this[i-1][j-1] === p){
 			return true;
 		};
-		else{
-			return false;
-		};
+		return false
 	},
 
 	checkDR: function(i, j, p){
 		if(this[i-1][j+1] === p){
 			return true;
 		};
-		else{
-			return false;
-		};
+		return false;
 	},
+
+	checkUR: function(i, j, p){
+		if(this[i+1][j+1] === p){
+			return true;
+		};
+		return false;
+	},
+
+	checkUL: function(i, j, p){
+		if(this[i+1][j-1] === p){
+			return true;
+		};
+		return false;
+	},
+
+	checkL: function(i, j, p){
+		if(this[i-1][j] === p){
+			return true;
+		};
+		return false;
+	},
+
+	checkR: function(i, j, p){
+		if(this[i+1][j] === p){
+			return true;
+		};
+		return false;
+	},
+
+	checkD: function(i, j, p){
+		if(this[i][j-1] === p){
+			return true;
+		};
+		return false;
+	},
+
+	checkU: function(i, j, p){
+		if(this[i][j+1] === p){
+			return true;
+		};
+		return false;
+	},
+
 
 };
