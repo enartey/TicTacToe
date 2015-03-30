@@ -44,6 +44,8 @@ proto = {
 			}
 			i += 1;
 		}
+		this.turn = 0;
+		this.boardSize = boardSize
 		return arr;
 	},
 
