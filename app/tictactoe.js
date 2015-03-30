@@ -50,59 +50,35 @@ proto = {
 	},
 
 	checkDL: function(i, j, p){
-		if (this[ i - 1 ][ j - 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i - 1 ][ j - 1 ] === p){
 	},
 
 	checkDR: function(i, j, p){
-		if (this[ i - 1 ][ j + 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i - 1 ][ j + 1 ] === p){
 	},
 
 	checkUR: function(i, j, p){
-		if (this[ i + 1 ][ j + 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i + 1 ][ j + 1 ] === p){
 	},
 
 	checkUL: function(i, j, p){
-		if (this[ i + 1 ][ j - 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i + 1 ][ j - 1 ] === p){
 	},
 
 	checkL: function(i, j, p){
-		if (this[ i - 1 ][ j ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i - 1 ][ j ] === p){
 	},
 
 	checkR: function(i, j, p){
-		if (this[ i + 1 ][ j ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i + 1 ][ j ] === p){
 	},
 
 	checkD: function(i, j, p){
-		if (this[ i ][ j - 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i ][ j - 1 ] === p){
 	},
 
 	checkU: function(i, j, p){
-		if (this[ i ][ j + 1 ] === p){
-			return true;
-		}
-		return false;
+		return (this[ i ][ j + 1 ] === p){
 	},
 
 	winner: function(){
