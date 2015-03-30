@@ -44,9 +44,10 @@ proto = {
 			}
 			i += 1;
 		}
+		this.arr = arr;
 		this.turn = 0;
-		this.boardSize = boardSize
-		return arr;
+		this.boardSize = boardSize;
+		return this;
 	},
 
 	checkDL: function(i, j, p){
