@@ -93,4 +93,22 @@ proto = {
 			}
 		}
 	}
+
+	checkRow: function(i, j){
+
+	},
+
+	checkColumn: function(i, j){
+
+	},
+
+	checkLanes: function(i, j){
+
+	},
+
+	endTurn: function(i, j){
+		this.turn = (this.turn+1) % 2; 
+	}
+
+
 };
