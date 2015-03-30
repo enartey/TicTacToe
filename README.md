@@ -9,4 +9,7 @@ The first property is a nested array. It is constructed with a given integer, an
 
 The second property is an integer called "turn." It is a 0 if it is O's turn and 1 if it is X's turn.
 
-The third property is an integer called
+The third property is an integer called "boardsize." It will save the board size, X, (X by X) for it's proto methods to use.
+
+# Proto Methods
+
