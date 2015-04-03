@@ -50,46 +50,46 @@ proto = {
 		return this;
 	},
 
-	checkDL: function(i, j, p){
-		return (this.arr[ i - 1 ][ j - 1 ] === p){
+	checkDL: function(i, j){
+		return (this.arr[ i - 1 ][ j - 1 ] === this.turn){
 	},
 
-	checkDR: function(i, j, p){
-		return (this.arr[ i - 1 ][ j + 1 ] === p){
+	checkDR: function(i, j){
+		return (this.arr[ i - 1 ][ j + 1 ] === this.turn){
 	},
 
-	checkUR: function(i, j, p){
-		return (this.arr[ i + 1 ][ j + 1 ] === p){
+	checkUR: function(i, j){
+		return (this.arr[ i + 1 ][ j + 1 ] === this.turn){
 	},
 
-	checkUL: function(i, j, p){
-		return (this.arr[ i + 1 ][ j - 1 ] === p){
+	checkUL: function(i, j){
+		return (this.arr[ i + 1 ][ j - 1 ] === this.turn){
 	},
 
-	checkL: function(i, j, p){
-		return (this.arr[ i - 1 ][ j ] === p){
+	checkL: function(i, j){
+		return (this.arr[ i - 1 ][ j ] === this.turn){
 	},
 
-	checkR: function(i, j, p){
-		return (this.arr[ i + 1 ][ j ] === p){
+	checkR: function(i, j){
+		return (this.arr[ i + 1 ][ j ] === this.turn){
 	},
 
-	checkD: function(i, j, p){
-		return (this.arr[ i ][ j - 1 ] === p){
+	checkD: function(i, j){
+		return (this.arr[ i ][ j - 1 ] === this.turn{
 	},
 
-	checkU: function(i, j, p){
-		return (this.arr[ i ][ j + 1 ] === p){
+	checkU: function(i, j){
+		return (this.arr[ i ][ j + 1 ] === this.turn){
 	},
 
 	winner: function(){
 		// code to end/reset the game
 	},
 
-	checkDiag: function(i, j, p){
+	checkDiag: function(i, j){
 		var acc = 1;
 		while (acc < boardSize){
-			if (this.checkUL(i, j, p)){
+			if (this.checkUL(i, j, this.turn)){
 				acc += 1;
 			}
 		}
