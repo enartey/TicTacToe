@@ -50,6 +50,11 @@ proto = {
 		return this;
 	},
 
+	bounds: function(i, j){
+		//returns true if i or j are out of bounds
+		return(((i || j) < 0) || ((i || j) > this.boardSize)); 
+	},
+
 	checkDL: function(i, j){
 		return this.arr[ i - 1 ][ j - 1 ] === this.turn;
 	},
