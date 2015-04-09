@@ -1,4 +1,4 @@
-define(function() {
+//define(function() {
 /*
 	File that creates the array used by the game to
 	determine locate and notify the user when there is
@@ -35,7 +35,7 @@ function makeBoard(){
 }
 */
 
-board.prototype = {
+proto = {
 	initialize: function(boardSize){
 		var arr = [], i, j;
 		while (i < boardSize){
@@ -268,4 +268,4 @@ board.prototype = {
 };
 
 	return board;
-});
+//});
