@@ -15,9 +15,11 @@ function makeBoard(){
 }
 
 /*
+	for future implementation of multiple board sizes.
+
+
 	Accepts the required board size from the user and
 	uses it to create the board
-*/
 	function size(){
 	var prompt = require("prompt");
 
@@ -30,7 +32,7 @@ function makeBoard(){
 	});
 	return result.boardsize;
 }
-
+*/
 
 proto = {
 	initialize: function(boardSize){
@@ -202,6 +204,4 @@ proto = {
 	endTurn: function(i, j){
 		this.turn = (this.turn + 1) % 2;
 	}
-
-
 };
