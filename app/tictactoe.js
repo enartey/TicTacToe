@@ -52,18 +52,12 @@ proto = {
 
 	isOutOfBounds: function(i, j){
 		//returns true if i or j are out of bounds
-		if ((i < 0) || (j < 0)){
-			return true;
-		}
-		if ((i > this.boardsize) || (j > this.boardsize)){
-			return true;
-		}
-		return false;
+		return (i < 0) || (j < 0) || (i > this.boardsize) || (j > this.boardsize);
 	},
 
 	// checks the space to the bottom left of the space in question.
 	checkDL: function(i, j){
-		if (isOutOfBounds(i, j)){
+		if (this.isOutOfBounds(i, j)){
 			return false;
 		}
 		return this.arr[ i - 1 ][ j - 1 ] === this.turn;
