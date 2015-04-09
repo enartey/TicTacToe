@@ -197,19 +197,15 @@ proto = {
 	*/
 	checkColumn: function(i, j){
 		var acc = 1;
-		while (acc < this.boardsize){
-			if (this.checkD(i, j)){
+		if (this.checkD(i, j)){
+			acc += 1;
+			if (this.checkD(i, j - 1)){
 				acc += 1;
-				if (this.checkD(i, j - 1)){
-					acc += 1;
-					this.winner();
-				}
-				if (this.checkU(i, j)){
-					acc += 1;
-					if (this.checkU(i, j + 1)){
-						this.winner();
-					}
-				}
+			}
+		if (this.checkU(i, j)){
+			acc += 1;
+			if (this.checkU(i, j + 1)){
+				this.winner();
 			}
 		}
 	},
