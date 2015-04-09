@@ -159,8 +159,13 @@ proto = {
 		}
 	},
 
+	/* checks all possible configurations of winning
+		per turn to see if there is a winner
+	*/
 	checkLanes: function(i, j){
-
+		this.checkRow();
+		this.checkColumn();
+		this.checkDiag();
 	},
 
 	endTurn: function(i, j){
