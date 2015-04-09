@@ -169,21 +169,23 @@ proto = {
 	*/
 	checkRow: function(i, j){
 		var acc = 1;
-		while (acc < this.boardsize){
-			if (this.checkL(i, j)){
+		if (this.checkL(i, j)){
 				acc += 1;
 				if (this.checkL(i - 1, j)){
 					acc += 1;
-					this.winner();
 				}
-			}
-			if (this.checkR(i, j)){
-				acc += 1;
-				if (this.checkR(i + 1, j)){
+				if (this.checkR(i, j){
 					acc += 1;
-					this.winner();
-				}
+				})
 			}
+		if (this.checkR(i, j)){
+			acc += 1;
+			if (this.checkR(i + 1, j)){
+				acc += 1;
+			}
+		}
+		if (acc >= this.boardsize){
+			winner();
 		}
 	},
 
