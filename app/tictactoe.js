@@ -89,30 +89,30 @@ proto = {
 	checkDiag: function(i, j){
 		var acc = 1;
 		while (acc < this.boardSize){
-			if (this.checkUL(i, j, this.turn)){
+			if (this.checkUL(i, j)){
 				acc += 1;
-				if (this.checkUL(i - 1, j + 1, this.turn)){
+				if (this.checkUL(i - 1, j + 1)){
 					acc += 1;
 					this.winner();
 				}
 			}
-			if (this.checkDR(i, j, this.turn)){
+			if (this.checkDR(i, j)){
 				acc += 1;
-				if (this.checkDR(i + 1, j - 1, this.turn)){
+				if (this.checkDR(i + 1, j - 1)){
 					acc += 1;
 					this.winner();
 				}
 			}
-			if (this.checkUR(i, j, this.turn)){
+			if (this.checkUR(i, j)){
 				acc += 1;
-				if (this.checkUR(i + 1, j + 1, this.turn)){
+				if (this.checkUR(i + 1, j + 1)){
 					acc += 1;
 					this.winner();
 				}
 			}
-			if (this.checkDL(i, j, this.turn)){
+			if (this.checkDL(i, j)){
 				acc += 1;
-				if (this.checkDL(i - 1, j - 1, this.turnt)){
+				if (this.checkDL(i - 1, j - 1)){
 					acc += 1;
 					this.winner();
 				}
@@ -122,6 +122,11 @@ proto = {
 
 	checkRow: function(i, j){
 		var acc = 1;
+		while (acc < this.boardsize){
+			if (this.checkL(i, j)){
+
+			}
+		}
 	},
 
 	checkColumn: function(i, j){
