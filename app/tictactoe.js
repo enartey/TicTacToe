@@ -1,3 +1,4 @@
+define(function() {
 /*
 	File that creates the array used by the game to
 	determine locate and notify the user when there is
@@ -34,7 +35,7 @@ function makeBoard(){
 }
 */
 
-proto = {
+board.prototype = {
 	initialize: function(boardSize){
 		var arr = [], i, j;
 		while (i < boardSize){
@@ -133,34 +134,31 @@ proto = {
 	*/
 	checkDiag: function(i, j){
 		var acc = 1;
-		while (acc < this.boardSize){
-			if (this.checkUL(i, j)){
+		if (this.checkUL(i, j)){
+			acc += 1;
+			if (this.checkUL(i - 1, j + 1)){
 				acc += 1;
-				if (this.checkUL(i - 1, j + 1)){
-					acc += 1;
-					this.winner();
-				}
 			}
-			if (this.checkDR(i, j)){
+			if(this.checkDR(i, j)){
 				acc += 1;
-				if (this.checkDR(i + 1, j - 1)){
-					acc += 1;
-					this.winner();
-				}
 			}
-			if (this.checkUR(i, j)){
+		}
+		if (this.checkDR(i, j)){
+			acc += 1;
+			if (this.checkDR(i + 1, j - 1)){
 				acc += 1;
-				if (this.checkUR(i + 1, j + 1)){
-					acc += 1;
-					this.winner();
-				}
 			}
-			if (this.checkDL(i, j)){
+		}
+		if (this.checkUR(i, j)){
+			acc += 1;
+			if (this.checkUR(i + 1, j + 1)){
 				acc += 1;
-				if (this.checkDL(i - 1, j - 1)){
-					acc += 1;
-					this.winner();
-				}
+			}
+		}
+		if (this.checkDL(i, j)){
+			acc += 1;
+			if (this.checkDL(i - 1, j - 1)){
+				acc += 1;
 			}
 		}
 	},
@@ -229,5 +227,45 @@ proto = {
 	*/
 	endTurn: function(i, j){
 		this.turn = (this.turn + 1) % 2;
+	},
+
+	/*
+		sets the value of the index with the 
+		attributes of the player's turn
+	*/
+	set: function(i,j){
+		if (this.arr[ i ][ j ] == null){
+			this.arr[ i ][ j ] = this.turn;
+		} else {
+			console.log("Array position contains element");
+			throw new Error;
+		}
 	}
+
+	// Simple event system
+    // 1. this.events object initialized at constructor
+    // 2. on(event, handler, context)
+    // 3. trigger(event, data)
+
+    on: function(event, handler, ctx) {
+       var handle = { handler: handler, ctx: ctx || null };
+       this.events[ event ] = this.events[ event ] || [];
+       this.events[ event ].push(handle);
+       return handle;
+    },
+
+
+    trigger: function(event, data) {
+       if (this.events[ event ]) {
+          this.events[ event ].forEach(function(handle) {
+             handle.handler.call(handle.ctx, data);
+          });
+      	}
+        return this;
+    }
 };
+
+	return board;
+
+});
+
