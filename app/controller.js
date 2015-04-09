@@ -2,7 +2,7 @@ define(["jquery"],
 
 	function($){
 		var Controller;
-	}
+	});
 
 	function Controller(domElement, model){
 		this.el = $(domElement);
@@ -16,5 +16,6 @@ define(["jquery"],
 		render: function(){
 			// TODO
 		}
+	}
 	return Controller;
 });
