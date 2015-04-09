@@ -67,36 +67,57 @@ proto = {
 
 	// checks the space to the bottom right of the space in question.
 	checkDR: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i - 1 ][ j + 1 ] === this.turn;
 	},
 
 	// checks the space to the top left of the space in question.
 	checkUR: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i + 1 ][ j + 1 ] === this.turn;
 	},
 
 	// checks the space to the top left of the space in question.
 	checkUL: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i + 1 ][ j - 1 ] === this.turn;
 	},
 
 	// checks the space directly to the left of the space in question.
 	checkL: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i - 1 ][ j ] === this.turn;
 	},
 
 	// checks the space directly to the right of the space in question.
 	checkR: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i + 1 ][ j ] === this.turn;
 	},
 
 	// checks the space directly below the space in question.
 	checkD: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i ][ j - 1 ] === this.turn;
 	},
 
 	// checks the space directly above the space in question.
 	checkU: function(i, j){
+		if (this.isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i ][ j + 1 ] === this.turn;
 	},
 
