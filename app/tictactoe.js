@@ -49,6 +49,7 @@ proto = {
 		this.arr = arr;
 		this.turn = 0;
 		this.boardSize = boardSize;
+		this.win = 0;
 		return this;
 	},
 
@@ -123,6 +124,7 @@ proto = {
 
 	winner: function(){
 		// code to end/reset the game
+		this.win = 1;
 	},
 
 	/*
