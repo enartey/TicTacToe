@@ -15,7 +15,7 @@ function makeBoard(){
 }
 
 /*
-	Accepts the required board size from the user and 
+	Accepts the required board size from the user and
 	uses it to create the board
 */
 	function size(){
@@ -124,7 +124,18 @@ proto = {
 		var acc = 1;
 		while (acc < this.boardsize){
 			if (this.checkL(i, j)){
-
+				acc += 1;
+				if (this.checkL(i - 1, j)){
+					acc += 1;
+					this.winner();
+				}
+			}
+			if (this.checkR(i, j)){
+				acc += 1;
+				if (this.checkR(i + 1, j)){
+					acc += 1;
+					this.winner();
+				}
 			}
 		}
 	},
