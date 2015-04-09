@@ -187,7 +187,7 @@ proto = {
 			}
 		}
 		if (acc >= this.boardsize){
-			winner();
+			ths.winner();
 		}
 	},
 
@@ -208,8 +208,10 @@ proto = {
 		if (this.checkU(i, j)){
 			acc += 1;
 			if (this.checkU(i, j + 1)){
-				this.winner();
 			}
+		}
+		if (acc >= this.boardsize){
+			this.winner();
 		}
 	},
 
