@@ -52,7 +52,6 @@ proto = {
 
 	isOutOfBounds: function(i, j){
 		//returns true if i or j are out of bounds
-		//return(((i || j) < 0) || ((i || j) > this.boardSize)); 
 		if ((i < 0) || (j < 0)){
 			return true;
 		}
@@ -62,6 +61,7 @@ proto = {
 		return false;
 	},
 
+	// checks the space to the bottom left of the space in question.
 	checkDL: function(i, j){
 		if (isOutOfBounds(i, j)){
 			return false;
@@ -69,30 +69,37 @@ proto = {
 		return this.arr[ i - 1 ][ j - 1 ] === this.turn;
 	},
 
+	// checks the space to the bottom right of the space in question.
 	checkDR: function(i, j){
 		return this.arr[ i - 1 ][ j + 1 ] === this.turn;
 	},
 
+	// checks the space to the top left of the space in question.
 	checkUR: function(i, j){
 		return this.arr[ i + 1 ][ j + 1 ] === this.turn;
 	},
 
+	// checks the space to the top left of the space in question.
 	checkUL: function(i, j){
 		return this.arr[ i + 1 ][ j - 1 ] === this.turn;
 	},
 
+	// checks the space directly to the left of the space in question.
 	checkL: function(i, j){
 		return this.arr[ i - 1 ][ j ] === this.turn;
 	},
 
+	// checks the space directly to the right of the space in question.
 	checkR: function(i, j){
 		return this.arr[ i + 1 ][ j ] === this.turn;
 	},
 
+	// checks the space directly below the space in question.
 	checkD: function(i, j){
 		return this.arr[ i ][ j - 1 ] === this.turn;
 	},
 
+	// checks the space directly above the space in question.
 	checkU: function(i, j){
 		return this.arr[ i ][ j + 1 ] === this.turn;
 	},
@@ -101,6 +108,10 @@ proto = {
 		// code to end/reset the game
 	},
 
+	/*
+		checks diagonally after a player plays to find out
+		if there is a winner
+	*/
 	checkDiag: function(i, j){
 		var acc = 1;
 		while (acc < this.boardSize){
@@ -135,6 +146,10 @@ proto = {
 		}
 	},
 
+	/*
+		checks a row after a players plays to
+		find out if there is a winner
+	*/
 	checkRow: function(i, j){
 		var acc = 1;
 		while (acc < this.boardsize){
@@ -155,6 +170,10 @@ proto = {
 		}
 	},
 
+	/*
+		checks a column after a player plays to
+		find out if there is a winner
+	*/
 	checkColumn: function(i, j){
 		var acc = 1;
 		while (acc < this.boardsize){
@@ -183,6 +202,9 @@ proto = {
 		this.checkDiag();
 	},
 
+	/*
+		ends the turn of the user who just played
+	*/
 	endTurn: function(i, j){
 		this.turn = (this.turn + 1) % 2;
 	}
