@@ -92,21 +92,28 @@ proto = {
 			if (this.checkUL(i, j, this.turn)){
 				acc += 1;
 				if (this.checkUL(i-1, j+1, this.turn)){
+					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkDR(i, j, this.turn)){
+				acc += 1;
 				if(this.checkDR(i+1, j-1, this.turn)){
+					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkUR(i, j, this.turn)){
+				acc += 1;
 				if(this.checkUR(i+1, j+1, this.turn)){
+					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkDL(i, j, this.turn)){
-				if(this.checkDL(i-1, j-1, this.turn)){
+				acc += 1;
+				if(this.checkDL(i-1, j-1, this.turnt)){
+					acc += 1;
 					this.winner();
 				}
 			}
@@ -114,6 +121,7 @@ proto = {
 	}
 
 	checkRow: function(i, j){
+		var acc = 1;
 
 	},
 
