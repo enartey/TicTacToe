@@ -268,15 +268,3 @@ proto = {
 };
 
 	return board;
-
-// DO NOT MODIFY ANYTHING BELOW THIS LINE
-ticTacToe = {
-   new: makeNewList
-};
-
-Object.defineProperty(ticTacToe, "prototype", {
-   value: proto,
-   writable: false
-});
-
-module.exports = ticTacToe;
