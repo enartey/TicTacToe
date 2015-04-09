@@ -10,13 +10,11 @@ define(["jquery"],
 
 		this.render();
 		this.model.on("change", this.render, this);
-
 	}
 	
 	Controller.prototype = {
 		render: function(){
 			// TODO
 		}
-
 	return Controller;
 });
