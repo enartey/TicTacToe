@@ -50,12 +50,22 @@ proto = {
 		return this;
 	},
 
-	bounds: function(i, j){
+	isOutOfBounds: function(i, j){
 		//returns true if i or j are out of bounds
-		return(((i || j) < 0) || ((i || j) > this.boardSize)); 
+		//return(((i || j) < 0) || ((i || j) > this.boardSize)); 
+		if ((i < 0) || (j < 0)){
+			return true;
+		}
+		if ((i > this.boardsize) || (j > this.boardsize)){
+			return true;
+		}
+		return false;
 	},
 
 	checkDL: function(i, j){
+		if (isOutOfBounds(i, j)){
+			return false;
+		}
 		return this.arr[ i - 1 ][ j - 1 ] === this.turn;
 	},
 
