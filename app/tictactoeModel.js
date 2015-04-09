@@ -11,7 +11,7 @@ var index, board, proto;
 /* creates two dimensional game board of any size using a nested array */
 function makeBoard(){
 	board = Object.create(proto);
-	board.initialize(size());
+	board.initialize(3);
 	return board;
 }
 
@@ -55,8 +55,8 @@ board.prototype = {
 	},
 
 	isOutOfBounds: function(i, j){
-		//returns true if i or j are out of bounds
-		return (i < 0) || (j < 0) || (i > this.boardsize) || (j > this.boardsize);
+		// returns true if i or j are out of bounds
+		return i < 0 || j < 0 || i > this.boardsize || j > this.boardsize;
 	},
 
 	// checks the space to the bottom left of the space in question.
@@ -139,7 +139,7 @@ board.prototype = {
 			if (this.checkUL(i - 1, j + 1)){
 				acc += 1;
 			}
-			if(this.checkDR(i, j)){
+			if (this.checkDR(i, j)){
 				acc += 1;
 			}
 		}
@@ -174,9 +174,9 @@ board.prototype = {
 				if (this.checkL(i - 1, j)){
 					acc += 1;
 				}
-				if (this.checkR(i, j){
+				if (this.checkR(i, j)){
 					acc += 1;
-				})
+				}
 			}
 		if (this.checkR(i, j)){
 			acc += 1;
@@ -185,7 +185,7 @@ board.prototype = {
 			}
 		}
 		if (acc >= this.boardsize){
-			ths.winner();
+			this.winner();
 		}
 	},
 
@@ -206,11 +206,13 @@ board.prototype = {
 		if (this.checkU(i, j)){
 			acc += 1;
 			if (this.checkU(i, j + 1)){
+				acc += 1;
 			}
 		}
 		if (acc >= this.boardsize){
 			this.winner();
 		}
+	}
 	},
 
 	/* checks all possible configurations of winning
@@ -230,17 +232,17 @@ board.prototype = {
 	},
 
 	/*
-		sets the value of the index with the 
+		sets the value of the index with the
 		attributes of the player's turn
 	*/
-	set: function(i,j){
+	set: function(i, j){
 		if (this.arr[ i ][ j ] == null){
 			this.arr[ i ][ j ] = this.turn;
 		} else {
 			console.log("Array position contains element");
-			throw new Error;
+			throw new Error();
 		}
-	}
+	},
 
 	// Simple event system
     // 1. this.events object initialized at constructor
@@ -260,12 +262,10 @@ board.prototype = {
           this.events[ event ].forEach(function(handle) {
              handle.handler.call(handle.ctx, data);
           });
-      	}
+      }
         return this;
     }
 };
 
 	return board;
-
 });
-
