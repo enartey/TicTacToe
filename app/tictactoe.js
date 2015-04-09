@@ -202,6 +202,9 @@ proto = {
 			if (this.checkD(i, j - 1)){
 				acc += 1;
 			}
+			if (this.checkU(i, j)){
+				acc += 1;
+			}
 		if (this.checkU(i, j)){
 			acc += 1;
 			if (this.checkU(i, j + 1)){
