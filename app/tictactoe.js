@@ -27,7 +27,7 @@ function makeBoard(){
 	// Get board size from the user
 	prompt.get([ "boardsize" ], function(result){
 		console.log("boardsize: " + result.boardsize);
-	} );
+	});
 	return result.boardsize;
 }
 
@@ -51,35 +51,35 @@ proto = {
 	},
 
 	checkDL: function(i, j){
-		return (this.arr[ i - 1 ][ j - 1 ] === this.turn){
+		return this.arr[ i - 1 ][ j - 1 ] === this.turn;
 	},
 
 	checkDR: function(i, j){
-		return (this.arr[ i - 1 ][ j + 1 ] === this.turn){
+		return this.arr[ i - 1 ][ j + 1 ] === this.turn;
 	},
 
 	checkUR: function(i, j){
-		return (this.arr[ i + 1 ][ j + 1 ] === this.turn){
+		return this.arr[ i + 1 ][ j + 1 ] === this.turn;
 	},
 
 	checkUL: function(i, j){
-		return (this.arr[ i + 1 ][ j - 1 ] === this.turn){
+		return this.arr[ i + 1 ][ j - 1 ] === this.turn;
 	},
 
 	checkL: function(i, j){
-		return (this.arr[ i - 1 ][ j ] === this.turn){
+		return this.arr[ i - 1 ][ j ] === this.turn;
 	},
 
 	checkR: function(i, j){
-		return (this.arr[ i + 1 ][ j ] === this.turn){
+		return this.arr[ i + 1 ][ j ] === this.turn;
 	},
 
 	checkD: function(i, j){
-		return (this.arr[ i ][ j - 1 ] === this.turn{
+		return this.arr[ i ][ j - 1 ] === this.turn;
 	},
 
 	checkU: function(i, j){
-		return (this.arr[ i ][ j + 1 ] === this.turn){
+		return this.arr[ i ][ j + 1 ] === this.turn;
 	},
 
 	winner: function(){
@@ -88,41 +88,40 @@ proto = {
 
 	checkDiag: function(i, j){
 		var acc = 1;
-		while (acc < boardSize){
+		while (acc < this.boardSize){
 			if (this.checkUL(i, j, this.turn)){
 				acc += 1;
-				if (this.checkUL(i-1, j+1, this.turn)){
+				if (this.checkUL(i - 1, j + 1, this.turn)){
 					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkDR(i, j, this.turn)){
 				acc += 1;
-				if(this.checkDR(i+1, j-1, this.turn)){
+				if (this.checkDR(i + 1, j - 1, this.turn)){
 					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkUR(i, j, this.turn)){
 				acc += 1;
-				if(this.checkUR(i+1, j+1, this.turn)){
+				if (this.checkUR(i + 1, j + 1, this.turn)){
 					acc += 1;
 					this.winner();
 				}
 			}
 			if (this.checkDL(i, j, this.turn)){
 				acc += 1;
-				if(this.checkDL(i-1, j-1, this.turnt)){
+				if (this.checkDL(i - 1, j - 1, this.turnt)){
 					acc += 1;
 					this.winner();
 				}
 			}
 		}
-	}
+	},
 
 	checkRow: function(i, j){
 		var acc = 1;
-
 	},
 
 	checkColumn: function(i, j){
@@ -134,7 +133,7 @@ proto = {
 	},
 
 	endTurn: function(i, j){
-		this.turn = (this.turn+1) % 2; 
+		this.turn = (this.turn + 1) % 2;
 	}
 
 
