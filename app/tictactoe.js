@@ -91,6 +91,24 @@ proto = {
 		while (acc < boardSize){
 			if (this.checkUL(i, j, this.turn)){
 				acc += 1;
+				if (this.checkUL(i-1, j+1, this.turn)){
+					this.winner();
+				}
+			}
+			if (this.checkDR(i, j, this.turn)){
+				if(this.checkDR(i+1, j-1, this.turn)){
+					this.winner();
+				}
+			}
+			if (this.checkUR(i, j, this.turn)){
+				if(this.checkUR(i+1, j+1, this.turn)){
+					this.winner();
+				}
+			}
+			if (this.checkDL(i, j, this.turn)){
+				if(this.checkDL(i-1, j-1, this.turn)){
+					this.winner();
+				}
 			}
 		}
 	}
