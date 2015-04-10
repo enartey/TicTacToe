@@ -1,4 +1,21 @@
-define(function() {
+//define(function() {
+
+(function(define) {
+
+    define(function (require) {
+        var b = require('b');
+
+        // Your code goes here
+
+        return function () {};
+    });
+
+}( // Help Node out by setting up define.
+     typeof module === 'object' && typeof define !== 'function'
+    ? function (factory) { module.exports = factory(require, exports, module); }
+    : define
+));
+
 /*
 	File that creates the array used by the game to
 	determine locate and notify the user when there is
@@ -268,4 +285,4 @@ proto = {
 };
 
 	return board;
-});
+//});
