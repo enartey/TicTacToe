@@ -227,7 +227,7 @@ proto = {
 	/*
 		ends the turn of the user who just played
 	*/
-	endTurn: function(i, j){
+	endTurn: function(){
 		this.turn = (this.turn + 1) % 2;
 	},
 
