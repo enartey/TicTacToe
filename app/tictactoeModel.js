@@ -1,4 +1,4 @@
-//define(function() {
+define(function() {
 /*
 	File that creates the array used by the game to
 	determine locate and notify the user when there is
@@ -268,3 +268,4 @@ proto = {
 };
 
 	return board;
+});
