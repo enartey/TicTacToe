@@ -17,7 +17,7 @@ require.config({
    //waitSeconds: 15
 });
 
-require(["jquery","main","controller"],
+require(["jquery","model","controller"],
    function($, Model, Controller){
       var model, controller;
       $(function(){
