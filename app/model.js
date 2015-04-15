@@ -39,8 +39,11 @@
 
 	proto = {
 		initialize: function(boardSize){
-			var arr = [], i, j;
-			while (i < boardSize){
+			var arr = [ [ -1, -1, -1 ], [ -1, -1, -1 ], [ -1, -1, -1 ] ],
+				i, j;
+			//THIS IS COMMENTED OUT BECAUSE OUR IMPLEMENTATION IS
+			//NOW ONLY FOR A BOARD OF SIZE 3
+			/*while (i < boardSize){
 				j = 0;
 				arr[ i ] = [];
 				while (j < boardSize){
@@ -49,6 +52,7 @@
 				}
 				i += 1;
 			}
+			*/
 			this.arr = arr;
 			this.turn = 0;
 			this.boardSize = boardSize;
