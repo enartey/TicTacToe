@@ -37,7 +37,7 @@
 	}
 	*/
 
-	Model.prototype = {
+	proto = {
 		initialize: function(boardSize){
 			var arr = [], i, j;
 			while (i < boardSize){
