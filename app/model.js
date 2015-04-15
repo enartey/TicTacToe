@@ -6,15 +6,15 @@
 	a winner
 	*/
 
-	var index, Model, proto, board, exportThis;
+	var index, model, proto, board, exportThis;
 
 
 	/* creates two dimensional game board of any size using a nested array */
-	exportThis = function Model(){
+	function model(){
 		board = Object.create(proto);
 		this.events = {};
 		board.initialize(3);
-		// return board;
+		return board;
 	}
 
 	/*
@@ -228,7 +228,7 @@
 				console.log("Array position contains element");
 				throw new Error();
 			}
-		},
+		},	
 		// Simple event system
 	    // 1. this.events object initialized at constructor
 	    // 2. on(event, handler, context)
@@ -249,7 +249,9 @@
 	        return this;
 	    }
 	};
-	return Model;
+	return {
+		new: model
+	};
 	});
 	}(// Help Node out by setting up define.
     	 typeof module === 'object' && typeof define !== 'function'
@@ -257,8 +259,3 @@
     	: define
 	));
 
-try {
-   module.exports = {
-      ticTacToe: exportThis
-   };
-} catch (e) {}
