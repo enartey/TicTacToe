@@ -59,7 +59,39 @@ describe("Individual Check Functions", function(){
 	beforeEach(function(){
 		board = ticTacToe.new();
 	});
-	describe
+
+	/*each of these suites should check for:
+	- out of bounds
+	- null [use nullArr]
+	- 0 (O) [use a1]
+	- 1 (X) [use a2]
+	*/
+
+	describe("checkDL() #4", function(){
+
+	});
+	describe("checkDR() #5", function(){
+
+	});
+	describe("checkL() #6", function(){
+
+	});
+	describe("checkR() #7", function(){
+
+	});
+	describe("checkD() #8", function(){
+
+	});
+	describe("checkU() #9", function(){
+
+	});
+	describe("checkUR() #10", function(){
+
+	});
+	describe("checkUL() #11", function(){
+
+	});
+
 	describe("Null Board", function(){
 		it("Null Board", function(){
 			board.arr = nullArr;
