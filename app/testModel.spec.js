@@ -5,9 +5,6 @@ var board, expect, ticTacToe, chai,
 	a4 = [[1,1,1],[0,0,0],[1,0,1]],
 	emptyBoard = [[-1, -1, -1],[-1, -1, -1],[-1, -1, -1]];
 
-//expect = require("./chai.js").expect;
-//ticTacToe = require("./model.js");
-
 chai = require('./chai.js');
 expect = chai.expect;
 ticTacToe = require('./model.js');
@@ -64,7 +61,7 @@ describe("Individual Check Functions:", function(){
 	- 0 (O) [use a0]
 	- 1 (X) [use a1]
 	*/
-	describe("All checks on empty space", function(){
+	describe("Individual checks on empty space", function(){
 		board.arr = emptyBoard;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
@@ -92,7 +89,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("All checks on 0 space", function(){
+	describe.skip("Individual checks on 0 space", function(){
 		board.arr = a0;
 		//set turn to 0, all should return true
 		board.turn = 0;
@@ -149,7 +146,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("All checks on 1 space", function(){
+	describe.skip("Individual checks on 1 space", function(){
 		board.arr = a1;
 		//set as 1's turn (X)
 		board.turn = 1;
@@ -206,7 +203,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 	
-	describe("All checks on out of bounds space", function(){
+	describe.skip("Individual checks on out of bounds space", function(){
 		/*These should check that anything checked that would
 		be out of bounds returns as false
 		*/
