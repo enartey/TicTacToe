@@ -35,7 +35,7 @@ describe("Board Methods", function(){
 		board = ticTacToe.new();
 	});
 
-	it.skip("isOutOfBounds", function(){
+	it.skip("isOutOfBounds() #20", function(){
 		expect(board.isOutOfBounds(-1, -1)).to.equal(true);
 		expect(board.isOutOfBounds(-10, -10)).to.equal(true);
 		expect(board.isOutOfBounds(-10, 1)).to.equal(true);
@@ -50,6 +50,12 @@ describe("Board Methods", function(){
 		expect(board.isOutOfBounds(2, 1)).to.equal(false);
 		expect(board.isOutOfBounds(1, 2)).to.equal(false);
 	});
+
+	it("Winner() #15", function(){
+		expect(board.win).to.equal(0);
+		board.winner();
+		expect(board.win).to.equal(1);
+	})
 });
 
 describe("Individual Check Functions:", function(){
