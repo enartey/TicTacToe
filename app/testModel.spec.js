@@ -56,41 +56,49 @@ describe("Board Methods", function(){
 });
 
 describe("Individual Check Functions", function(){
-	beforeEach(function(){
-		board = ticTacToe.new();
-		board.arr = nullArr;
-	});
+	board = ticTacToe.new();
 
-	/*each of these suites should check for:
+	/*should check for:
 	- out of bounds
 	- null [use nullArr]
 	- 0 (O) [use a1]
 	- 1 (X) [use a2]
 	*/
-
-	describe("checkDL() #4", function(){
-		it("")
+	describe("All checks on null space", function(){
+		board.arr = nullArr;
+		it("checkDL() #4", function(){
+			expect(board.checkDL(1,1)).to.equal(false);
+		});
+		it("checkDR() #5", function(){
+			expect(board.checkDR(1,1)).to.equal(false);
+		});
+		it("checkL() #6", function(){
+			expect(board.checkL(1,1)).to.equal(false);
+		});
+		it("checkR() #7", function(){
+			expect(board.checkR(1,1)).to.equal(false);
+		});
+		it("checkD() #8", function(){
+			expect(board.checkD(1,1)).to.equal(false);
+		});
+		it("checkU() #9", function(){
+			expect(board.checkU(1,1)).to.equal(false);
+		});
+		it("checkUR() #10", function(){
+			expect(board.checkUR(1,1)).to.equal(false);
+		});
+		it("checkUL() #11", function(){
+			expect(board.checkUL(1,1)).to.equal(false);
+		});
 	});
-	describe("checkDR() #5", function(){
 
+	describe("All checks on 0 space", function(){
 	});
-	describe("checkL() #6", function(){
 
+	describe("All checks on 1 space", function(){
 	});
-	describe("checkR() #7", function(){
 
-	});
-	describe("checkD() #8", function(){
-
-	});
-	describe("checkU() #9", function(){
-
-	});
-	describe("checkUR() #10", function(){
-
-	});
-	describe("checkUL() #11", function(){
-
+	describe("All checks on out of bounds space", function(){
 	});
 
 });
