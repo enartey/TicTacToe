@@ -61,10 +61,12 @@
 		},
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){
+			i = i - 1;
+			j = j - 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
-			return this.arr[ i - 1 ][ j - 1 ] === this.turn;
+			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the bottom right of the space in question.
 		checkDR: function(i, j){

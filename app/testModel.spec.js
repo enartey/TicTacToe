@@ -4,7 +4,6 @@ var board, expect, ticTacToe, chai,
 	a3 = [[0,0,0],[1,1,1],[0,1,0]],
 	a3 = [[1,1,1],[0,0,0],[1,0,1]];
 
-
 //expect = require("./chai.js").expect;
 //ticTacToe = require("./model.js");
 
@@ -60,7 +59,7 @@ describe("methods", function(){
 		board.turn = 0;
 		//out of bounds examples first
 		expect(board.checkDL(0,0)).to.equal(false);
-		expect(board.checkDL(0,0)).to.equal(false);
+		expect(board.checkDL(0,1)).to.equal(false);
 		expect(board.checkDL(0,0)).to.equal(false);
 		expect(board.checkDL(0,0)).to.equal(false);
 	});
