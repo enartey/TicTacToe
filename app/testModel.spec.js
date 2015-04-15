@@ -64,7 +64,7 @@ describe("Individual Check Functions:", function(){
 	- 0 (O) [use a1]
 	- 1 (X) [use a2]
 	*/
-	describe.skip("All checks on empty space", function(){
+	describe("All checks on empty space", function(){
 		board.arr = emptyBoard;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
