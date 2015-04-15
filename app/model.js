@@ -44,7 +44,7 @@
 				j = 0;
 				arr[ i ] = [];
 				while (j < boardSize){
-					arr[ i ][ j ] = null;
+					arr[ i ][ j ] = -1;
 					j += 1;
 				}
 				i += 1;
@@ -62,7 +62,7 @@
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i - 1;
@@ -72,7 +72,7 @@
 		// checks the space to the bottom right of the space in question.
 		checkDR: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i + 1;
@@ -82,7 +82,7 @@
 		// checks the space to the top left of the space in question.
 		checkUR: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i + 1;
@@ -92,7 +92,7 @@
 		// checks the space to the top left of the space in question.
 		checkUL: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i - 1;
@@ -102,7 +102,7 @@
 		// checks the space directly to the left of the space in question.
 		checkL: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i - 1;
@@ -111,7 +111,7 @@
 		// checks the space directly to the right of the space in question.
 		checkR: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			i = i + 1;
@@ -120,7 +120,7 @@
 		// checks the space directly below the space in question.
 		checkD: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			j = j - 1;
@@ -129,7 +129,7 @@
 		// checks the space directly above the space in question.
 		checkU: function(i, j){
 			if (this.isOutOfBounds(i, j) ||
-				i === null || j === null){
+				i === -1 || j === -1){
 				return false;
 			}
 			j = j + 1;
@@ -242,7 +242,7 @@
 			attributes of the player's turn
 		*/
 		set: function(i, j){
-			if (this.arr[ i ][ j ] == null){
+			if (this.arr[ i ][ j ] == -1){
 				this.arr[ i ][ j ] = this.turn;
 			} else {
 				console.log("Array position contains element");
@@ -255,7 +255,7 @@
 	    // 3. trigger(event, data)
 
 	    on: function(event, handler, ctx) {
-	       var handle = { handler: handler, ctx: ctx || null };
+	       var handle = { handler: handler, ctx: ctx || -1 };
 	       this.events[ event ] = this.events[ event ] || [];
 	       this.events[ event ].push(handle);
 	       return handle;

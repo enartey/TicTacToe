@@ -3,7 +3,7 @@ var board, expect, ticTacToe, chai,
 	a2 = [[1,1,1],[1,1,1],[1,1,1]],
 	a3 = [[0,0,0],[1,1,1],[0,1,0]],
 	a3 = [[1,1,1],[0,0,0],[1,0,1]],
-	nullArr = [[null, null, null],[null, null, null],[null, null, null]];
+	emptyBoard = [[-1, -1, -1],[-1, -1, -1],[-1, -1, -1]];
 
 //expect = require("./chai.js").expect;
 //ticTacToe = require("./model.js");
@@ -18,8 +18,8 @@ describe("constructor", function(){
 		board = ticTacToe.new();
 	});
 
-	it.skip("creates null array", function(){
-		expect(board.arr).to.deep.equal(nullArr);
+	it("creates -1 array", function(){
+		expect(board.arr).to.deep.equal(emptyBoard);
 	});
 
 	it("turn = 0, boardsize = 3, win = 0", function(){
@@ -60,12 +60,12 @@ describe("Individual Check Functions:", function(){
 
 	/*should check for:
 	- out of bounds
-	- null [use nullArr]
+	- blank [use emptyArr]
 	- 0 (O) [use a1]
 	- 1 (X) [use a2]
 	*/
-	describe("All checks on null space", function(){
-		board.arr = nullArr;
+	describe("All checks on empty space", function(){
+		board.arr = emptyBoard;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
 		});
