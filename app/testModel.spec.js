@@ -92,35 +92,36 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	/*describe("All checks on 0 space", function(){
+	describe("All checks on 0 space", function(){
 		board.arr = a1;
+		board.turn = 0;
 		it("checkDL() #4", function(){
-			expect(board.checkDL(1,1)).to.equal(false);
+			expect(board.checkDL(1,1)).to.equal(true);
 		});
 		it("checkDR() #5", function(){
-			expect(board.checkDR(1,1)).to.equal(false);
+			expect(board.checkDR(1,1)).to.equal(true);
 		});
 		it("checkL() #6", function(){
-			expect(board.checkL(1,1)).to.equal(false);
+			expect(board.checkL(1,1)).to.equal(true);
 		});
 		it("checkR() #7", function(){
-			expect(board.checkR(1,1)).to.equal(false);
+			expect(board.checkR(1,1)).to.equal(true);
 		});
 		it("checkD() #8", function(){
-			expect(board.checkD(1,1)).to.equal(false);
+			expect(board.checkD(1,1)).to.equal(true);
 		});
 		it("checkU() #9", function(){
-			expect(board.checkU(1,1)).to.equal(false);
+			expect(board.checkU(1,1)).to.equal(true);
 		});
 		it("checkUR() #10", function(){
-			expect(board.checkUR(1,1)).to.equal(false);
+			expect(board.checkUR(1,1)).to.equal(true);
 		});
 		it("checkUL() #11", function(){
-			expect(board.checkUL(1,1)).to.equal(false);
+			expect(board.checkUL(1,1)).to.equal(true);
 		});
 	});
 
-	describe("All checks on 1 space", function(){
+	/*describe("All checks on 1 space", function(){
 		board.arr = a2;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
