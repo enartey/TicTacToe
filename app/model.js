@@ -6,11 +6,11 @@
 	a winner
 	*/
 
-	var index, Model, proto, board;
+	var index, Model, proto, board, exportThis;
 
 
 	/* creates two dimensional game board of any size using a nested array */
-	function Model(){
+	exportThis = function Model(){
 		board = Object.create(proto);
 		this.events = {};
 		board.initialize(3);
@@ -256,3 +256,9 @@
     	? function (factory) { module.exports = factory(require, exports, module); }
     	: define
 	));
+
+try {
+   module.exports = {
+      ticTacToe: exportThis
+   };
+} catch (e) {}
