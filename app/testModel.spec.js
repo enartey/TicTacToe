@@ -95,6 +95,7 @@ describe("Individual Check Functions:", function(){
 	describe("All checks on 0 space", function(){
 		board.arr = a1;
 		board.turn = 0;
+		console.log(board.arr);
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(true);
 		});
