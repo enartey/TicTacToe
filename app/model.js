@@ -1,16 +1,12 @@
-//define(function() {
 (function(define) {
-
     define(function (require) {
-        //var b = require('b');
-
-        /*
+    /*
 	File that creates the array used by the game to
 	determine locate and notify the user when there is
 	a winner
-*/
+	*/
 
-	var index, Model, proto;
+	var index, Model, proto, board;
 
 
 	/* creates two dimensional game board of any size using a nested array */
@@ -59,12 +55,10 @@
 			this.win = 0;
 			return this;
 		},
-
 		isOutOfBounds: function(i, j){
 			// returns true if i or j are out of bounds
 			return i < 0 || j < 0 || i > this.boardsize || j > this.boardsize;
 		},
-
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -72,7 +66,6 @@
 			}
 			return this.arr[ i - 1 ][ j - 1 ] === this.turn;
 		},
-
 		// checks the space to the bottom right of the space in question.
 		checkDR: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -80,7 +73,6 @@
 			}
 			return this.arr[ i - 1 ][ j + 1 ] === this.turn;
 		},
-
 		// checks the space to the top left of the space in question.
 		checkUR: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -88,7 +80,6 @@
 			}
 			return this.arr[ i + 1 ][ j + 1 ] === this.turn;
 		},
-
 		// checks the space to the top left of the space in question.
 		checkUL: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -96,7 +87,6 @@
 			}
 			return this.arr[ i + 1 ][ j - 1 ] === this.turn;
 		},
-
 		// checks the space directly to the left of the space in question.
 		checkL: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -104,7 +94,6 @@
 			}
 			return this.arr[ i - 1 ][ j ] === this.turn;
 		},
-
 		// checks the space directly to the right of the space in question.
 		checkR: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -112,7 +101,6 @@
 			}
 			return this.arr[ i + 1 ][ j ] === this.turn;
 		},
-
 		// checks the space directly below the space in question.
 		checkD: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -120,7 +108,6 @@
 			}
 			return this.arr[ i ][ j - 1 ] === this.turn;
 		},
-
 		// checks the space directly above the space in question.
 		checkU: function(i, j){
 			if (this.isOutOfBounds(i, j)){
@@ -128,12 +115,10 @@
 			}
 			return this.arr[ i ][ j + 1 ] === this.turn;
 		},
-
 		winner: function(){
 			// code to end/reset the game
 			this.win = 1;
 		},
-
 		/*
 			checks diagonally after a player plays to find out
 			if there is a winner
@@ -168,7 +153,6 @@
 				}
 			}
 		},
-
 		/*
 			checks a row after a players plays to
 			find out if there is a winner
@@ -194,7 +178,6 @@
 				this.winner();
 			}
 		},
-
 		/*
 			checks a column after a player plays to
 			find out if there is a winner
@@ -220,7 +203,6 @@
 			}
 		}
 		},
-
 		/* checks all possible configurations of winning
 			per turn to see if there is a winner
 		*/
@@ -229,14 +211,12 @@
 			this.checkColumn();
 			this.checkDiag();
 		},
-
 		/*
 			ends the turn of the user who just played
 		*/
 		endTurn: function(){
 			this.turn = (this.turn + 1) % 2;
 		},
-
 		/*
 			sets the value of the index with the
 			attributes of the player's turn
@@ -249,7 +229,6 @@
 				throw new Error();
 			}
 		},
-
 		// Simple event system
 	    // 1. this.events object initialized at constructor
 	    // 2. on(event, handler, context)
@@ -261,8 +240,6 @@
 	       this.events[ event ].push(handle);
 	       return handle;
 	    },
-
-
 	    trigger: function(event, data) {
 	       if (this.events[ event ]) {
 	          this.events[ event ].forEach(function(handle) {
@@ -272,9 +249,7 @@
 	        return this;
 	    }
 	};
-	        return Model;
-	    });
-
+	return Model;
 }( // Help Node out by setting up define.
      typeof module === 'object' && typeof define !== 'function'
     ? function (factory) { module.exports = factory(require, exports, module); }
