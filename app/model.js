@@ -1,7 +1,7 @@
 (function(define) {
     define(function (require) {
     /*
-	File that creates the array used by the game to
+	Creates the array used by the game to
 	determine locate and notify the user when there is
 	a winner
 	*/
@@ -14,7 +14,7 @@
 		board = Object.create(proto);
 		this.events = {};
 		board.initialize(3);
-		//return board;
+		// return board;
 	}
 
 	/*
@@ -250,8 +250,9 @@
 	    }
 	};
 	return Model;
-}( // Help Node out by setting up define.
-     typeof module === 'object' && typeof define !== 'function'
-    ? function (factory) { module.exports = factory(require, exports, module); }
-    : define
-));
+	});
+	}(// Help Node out by setting up define.
+    	 typeof module === 'object' && typeof define !== 'function'
+    	? function (factory) { module.exports = factory(require, exports, module); }
+    	: define
+	));
