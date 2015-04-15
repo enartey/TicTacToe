@@ -92,7 +92,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe("All checks on 0 space", function(){
+	describe.skip("All checks on 0 space", function(){
 		board.arr = a1;
 		board.turn = 0;
 		console.log(board.arr);
@@ -122,8 +122,9 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	/*describe("All checks on 1 space", function(){
+	describe("All checks on 1 space", function(){
 		board.arr = a2;
+		board.turn = 1;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
 		});
@@ -149,7 +150,7 @@ describe("Individual Check Functions:", function(){
 			expect(board.checkUL(1,1)).to.equal(false);
 		});
 	});
-
+	/*
 	describe("All checks on out of bounds space", function(){
 		board.arr = a3;
 		it("checkDL() #4", function(){
