@@ -2,9 +2,8 @@ var board;
 
 expect = require("./chai.js").expect;
 
-ticTacToe = require("./tictactoeModel.js");
+ticTacToe = require("./Model.js");
 
-console.log(ticTacToe);
 
 describe("constructor", function(){
 	"use strict";
