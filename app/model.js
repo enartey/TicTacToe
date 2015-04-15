@@ -271,7 +271,8 @@
 	        return this;
 	    }
 	};
-	        return board;
+	        //return board;
+	        return function(){};
 	    });
 
 }( // Help Node out by setting up define.
