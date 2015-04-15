@@ -10,6 +10,8 @@ define(["jquery"],
 
 		this.render();
 		this.model.on("change", this.render, this);
+		this.model.on("error", this.render, this);
+		this.el.on("change", )
 	}
 	
 	Controller.prototype = {
