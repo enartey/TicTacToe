@@ -92,45 +92,4 @@ describe("Individual Check Functions", function(){
 
 	});
 
-	describe("Null Board", function(){
-		it("Null Board", function(){
-			board.arr = nullArr;
-		});
-		it("Full O Board", function(){
-			//use a board full of O's [a1] and set to O's turn
-			board.arr = a1;
-			board.turn = 0;
-			//out of bounds examples first
-			expect(board.checkDL(0, 0)).to.equal(false);
-			expect(board.checkDL(0, 1)).to.equal(false);
-			expect(board.checkDL(0, 2)).to.equal(false);
-			expect(board.checkDL(1, 0)).to.equal(false);
-			expect(board.checkDL(2, 0)).to.equal(false);
-			//now run in bounds examples
-			expect(board.checkDL(1, 1)).to.equal(true);
-			expect(board.checkDL(1, 2)).to.equal(true);
-			expect(board.checkDL(2, 1)).to.equal(true);
-			expect(board.checkDL(2, 2)).to.equal(true);
-			//switch to board full of X's and make it X's turn
-			board.arr = a2;
-			board.turn = 1;
-			//out of bounds examples first
-			expect(board.checkDL(0, 0)).to.equal(false);
-			expect(board.checkDL(0, 1)).to.equal(false);
-			expect(board.checkDL(0, 2)).to.equal(false);
-			expect(board.checkDL(1, 0)).to.equal(false);
-			expect(board.checkDL(2, 0)).to.equal(false);
-			//now run in bounds examples
-			expect(board.checkDL(1, 1)).to.equal(true);
-			expect(board.checkDL(1, 2)).to.equal(true);
-			expect(board.checkDL(2, 1)).to.equal(true);
-			expect(board.checkDL(2, 2)).to.equal(true);
-			//switch to mixed board [a3] and X's turn
-			board.arr = a3;
-			board.turn = 1;
-			expect(board.checkDL(1, 1)).to.equal(false);
-			expect(board.checkDL(1, 2)).to.equal(false);
-			expect(board.checkDL(2, 2)).to.equal(true);
-		});
-	});
 });
