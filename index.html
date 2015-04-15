@@ -5,13 +5,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TicTacToe</title>
 	<link rel="........" type="text/css" href=".......">
+	<script type="text/javascript" src="svg.js"></script>
 </head>
 
 <body>
-
-
-
-
+	<div id="SVG">
+		<script>
+		var draw = SVG('SVG').size(300,300);
+		var rect = draw.rect(100,100).attr({fill: '#f06'})
+		</script>
+	</div>
 	<script data-main="app/main" src="require.js"></script>
 </body>
 
