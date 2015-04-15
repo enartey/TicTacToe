@@ -93,12 +93,87 @@ describe("Individual Check Functions", function(){
 	});
 
 	describe("All checks on 0 space", function(){
+		board.arr = a1;
+		it("checkDL() #4", function(){
+			expect(board.checkDL(1,1)).to.equal(false);
+		});
+		it("checkDR() #5", function(){
+			expect(board.checkDR(1,1)).to.equal(false);
+		});
+		it("checkL() #6", function(){
+			expect(board.checkL(1,1)).to.equal(false);
+		});
+		it("checkR() #7", function(){
+			expect(board.checkR(1,1)).to.equal(false);
+		});
+		it("checkD() #8", function(){
+			expect(board.checkD(1,1)).to.equal(false);
+		});
+		it("checkU() #9", function(){
+			expect(board.checkU(1,1)).to.equal(false);
+		});
+		it("checkUR() #10", function(){
+			expect(board.checkUR(1,1)).to.equal(false);
+		});
+		it("checkUL() #11", function(){
+			expect(board.checkUL(1,1)).to.equal(false);
+		});
 	});
 
 	describe("All checks on 1 space", function(){
+		board.arr = a2;
+		it("checkDL() #4", function(){
+			expect(board.checkDL(1,1)).to.equal(false);
+		});
+		it("checkDR() #5", function(){
+			expect(board.checkDR(1,1)).to.equal(false);
+		});
+		it("checkL() #6", function(){
+			expect(board.checkL(1,1)).to.equal(false);
+		});
+		it("checkR() #7", function(){
+			expect(board.checkR(1,1)).to.equal(false);
+		});
+		it("checkD() #8", function(){
+			expect(board.checkD(1,1)).to.equal(false);
+		});
+		it("checkU() #9", function(){
+			expect(board.checkU(1,1)).to.equal(false);
+		});
+		it("checkUR() #10", function(){
+			expect(board.checkUR(1,1)).to.equal(false);
+		});
+		it("checkUL() #11", function(){
+			expect(board.checkUL(1,1)).to.equal(false);
+		});
 	});
 
 	describe("All checks on out of bounds space", function(){
+		board.arr = a3;
+		it("checkDL() #4", function(){
+			expect(board.checkDL(1,1)).to.equal(false);
+		});
+		it("checkDR() #5", function(){
+			expect(board.checkDR(1,1)).to.equal(false);
+		});
+		it("checkL() #6", function(){
+			expect(board.checkL(1,1)).to.equal(false);
+		});
+		it("checkR() #7", function(){
+			expect(board.checkR(1,1)).to.equal(false);
+		});
+		it("checkD() #8", function(){
+			expect(board.checkD(1,1)).to.equal(false);
+		});
+		it("checkU() #9", function(){
+			expect(board.checkU(1,1)).to.equal(false);
+		});
+		it("checkUR() #10", function(){
+			expect(board.checkUR(1,1)).to.equal(false);
+		});
+		it("checkUL() #11", function(){
+			expect(board.checkUL(1,1)).to.equal(false);
+		});
 	});
 
 });
