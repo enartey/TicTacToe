@@ -10,14 +10,15 @@
 	a winner
 */
 
-	var index, board, proto;
+	var index, Model, proto;
 
 
 	/* creates two dimensional game board of any size using a nested array */
-	function makeBoard(){
+	function Model(){
 		board = Object.create(proto);
+		this.events = {};
 		board.initialize(3);
-		return board;
+		//return board;
 	}
 
 	/*
@@ -40,7 +41,7 @@
 	}
 	*/
 
-	proto = {
+	Model.prototype = {
 		initialize: function(boardSize){
 			var arr = [], i, j;
 			while (i < boardSize){
@@ -271,7 +272,7 @@
 	        return this;
 	    }
 	};
-	        return board;
+	        return Model;
 	    });
 
 }( // Help Node out by setting up define.
