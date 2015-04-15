@@ -55,7 +55,7 @@ describe("Board Methods", function(){
 	});
 });
 
-describe("Individual Check Functions", function(){
+describe("Individual Check Functions:", function(){
 	board = ticTacToe.new();
 
 	/*should check for:
@@ -92,7 +92,7 @@ describe("Individual Check Functions", function(){
 		});
 	});
 
-	describe("All checks on 0 space", function(){
+	/*describe("All checks on 0 space", function(){
 		board.arr = a1;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
@@ -175,5 +175,5 @@ describe("Individual Check Functions", function(){
 			expect(board.checkUL(1,1)).to.equal(false);
 		});
 	});
-
+	*/
 });

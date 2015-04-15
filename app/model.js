@@ -61,70 +61,70 @@
 		},
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){
-			i = i - 1;
-			j = j - 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i - 1;
+			j = j - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the bottom right of the space in question.
 		checkDR: function(i, j){
-			i = i + 1;
-			j = j - 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i + 1;
+			j = j - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the top left of the space in question.
 		checkUR: function(i, j){
-			i = i + 1;
-			j = j + 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i + 1;
+			j = j + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the top left of the space in question.
 		checkUL: function(i, j){
-			i = i - 1;
-			j = j + 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i - 1;
+			j = j + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly to the left of the space in question.
 		checkL: function(i, j){
-			i = i - 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly to the right of the space in question.
 		checkR: function(i, j){
-			i = i + 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			i = i + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly below the space in question.
 		checkD: function(i, j){
-			j = j - 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			j = j - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly above the space in question.
 		checkU: function(i, j){
-			j = j + 1;
 			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
+			j = j + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		winner: function(){
