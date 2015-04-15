@@ -149,7 +149,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe("All checks on 1 space", function(){
+	describe.skip("All checks on 1 space", function(){
 		board.arr = a1;
 		//set as 1's turn (X)
 		board.turn = 1;
@@ -205,33 +205,37 @@ describe("Individual Check Functions:", function(){
 			expect(board.checkUL(1,1)).to.equal(false);
 		});
 	});
-	/*
+	
 	describe("All checks on out of bounds space", function(){
-		board.arr = a3;
+		/*These should check that anything checked that would
+		be out of bounds returns as false
+		*/
+		board.arr = a1;
+		board.turn = 1;
 		it("checkDL() #4", function(){
-			expect(board.checkDL(1,1)).to.equal(false);
+			expect(board.checkDL(0,0)).to.equal(false);
 		});
 		it("checkDR() #5", function(){
-			expect(board.checkDR(1,1)).to.equal(false);
+			expect(board.checkDR(0,0)).to.equal(false);
 		});
 		it("checkL() #6", function(){
-			expect(board.checkL(1,1)).to.equal(false);
+			expect(board.checkL(0,2)).to.equal(false);
 		});
 		it("checkR() #7", function(){
-			expect(board.checkR(1,1)).to.equal(false);
+			expect(board.checkR(2,2)).to.equal(false);
 		});
 		it("checkD() #8", function(){
-			expect(board.checkD(1,1)).to.equal(false);
+			expect(board.checkD(2,0)).to.equal(false);
 		});
 		it("checkU() #9", function(){
-			expect(board.checkU(1,1)).to.equal(false);
+			expect(board.checkU(2,2)).to.equal(false);
 		});
 		it("checkUR() #10", function(){
-			expect(board.checkUR(1,1)).to.equal(false);
+			expect(board.checkUR(1,2)).to.equal(false);
 		});
 		it("checkUL() #11", function(){
-			expect(board.checkUL(1,1)).to.equal(false);
+			expect(board.checkUL(0,2)).to.equal(false);
 		});
 	});
-	*/
+	
 });
