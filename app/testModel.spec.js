@@ -58,6 +58,7 @@ describe("Board Methods", function(){
 describe("Individual Check Functions", function(){
 	beforeEach(function(){
 		board = ticTacToe.new();
+		board.arr = nullArr;
 	});
 
 	/*each of these suites should check for:
@@ -68,7 +69,7 @@ describe("Individual Check Functions", function(){
 	*/
 
 	describe("checkDL() #4", function(){
-
+		it("")
 	});
 	describe("checkDR() #5", function(){
 
