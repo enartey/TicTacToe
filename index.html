@@ -5,13 +5,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TicTacToe</title>
 	<link rel="........" type="text/css" href=".......">
+	<script type="text/javascript" src="svg.js"></script>
 </head>
 
 <body>
+	<div id="SVG">
+		<script>
+		var draw = SVG('SVG').size(800,600);
 
+		var line = draw.line(300,50,300,600).stroke({ width: 5,  color: 'red' });
+		var line = draw.line(450, 50, 450, 600).stroke({ width: 5, color: 'red'});
 
+		var line = draw.line(100, 200, 690, 200).stroke({ width: 5, color: 'red'});
+		var line = draw.line(100, 400, 690, 400).stroke({ width: 5, color: 'red'});
 
-
+		</script>
+	</div>
 	<script data-main="app/main" src="require.js"></script>
 </body>
 
