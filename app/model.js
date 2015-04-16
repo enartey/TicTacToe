@@ -262,6 +262,7 @@
 		set: function(i, j){
 			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
+				this.trigger("change", this);
 			} else {
 				console.log("Array position contains element");
 				throw new Error();
