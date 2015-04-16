@@ -243,9 +243,9 @@
 			per turn to see if there is a winner
 		*/
 		checkLanes: function(i, j){
-			if (this.checkRow() ||
-			this.checkColumn() ||
-			this.checkDiag()){
+			if (this.checkRow(i, j) ||
+			this.checkColumn(i, j) ||
+			this.checkDiag(i, j)){
 				return true;
 			}
 			return false;

@@ -191,6 +191,40 @@ describe("Board Methods", function(){
 	})
 
 	it("checkLanes() #17", function(){
+		board.arr = a1;
+		board.turn = 1;
+		expect(board.checkLanes(0,0)).to.equal(true);
+		expect(board.checkLanes(0,1)).to.equal(true);
+		expect(board.checkLanes(0,2)).to.equal(true);
+		expect(board.checkLanes(1,0)).to.equal(true);
+		expect(board.checkLanes(1,1)).to.equal(true);
+		expect(board.checkLanes(1,2)).to.equal(true);
+		expect(board.checkLanes(2,0)).to.equal(true);
+		expect(board.checkLanes(2,1)).to.equal(true);
+		expect(board.checkLanes(2,2)).to.equal(true);
+
+		board.turn = 0;
+		expect(board.checkLanes(0,0)).to.equal(false);
+		expect(board.checkLanes(0,1)).to.equal(false);
+		expect(board.checkLanes(0,2)).to.equal(false);
+		expect(board.checkLanes(1,0)).to.equal(false);
+		expect(board.checkLanes(1,1)).to.equal(false);
+		expect(board.checkLanes(1,2)).to.equal(false);
+		expect(board.checkLanes(2,0)).to.equal(false);
+		expect(board.checkLanes(2,1)).to.equal(false);
+		expect(board.checkLanes(2,2)).to.equal(false);
+
+		board.arr = a4;
+		board.turn = 1;
+		expect(board.checkLanes(0,0)).to.equal(false);
+		expect(board.checkLanes(0,1)).to.equal(true);
+		expect(board.checkLanes(0,2)).to.equal(true);
+		expect(board.checkLanes(1,0)).to.equal(true);
+		expect(board.checkLanes(1,1)).to.equal(true);
+		expect(board.checkLanes(1,2)).to.equal(false);
+		expect(board.checkLanes(2,0)).to.equal(true);
+		expect(board.checkLanes(2,1)).to.equal(false);
+		expect(board.checkLanes(2,2)).to.equal(true);
 
 	})
 });
