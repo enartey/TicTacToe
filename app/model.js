@@ -268,6 +268,7 @@
 					this.trigger("winner", this);
 				} else{
 					this.trigger("change", this);
+					this.endTurn();
 				}
 			} else {
 				console.log("Array position contains element");
