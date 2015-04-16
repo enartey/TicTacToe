@@ -12,7 +12,7 @@
 		a winner
 	*/
 
-	var model, proto, board;
+	var proto, board;
 
 
 	/* creates two dimensional game board of any size using a nested array */
