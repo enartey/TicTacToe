@@ -1,8 +1,8 @@
 var board, expect, ticTacToe, chai, 
 	a0 = [[0,0,0],[0,0,0],[0,0,0]],
 	a1 = [[1,1,1],[1,1,1],[1,1,1]],
-	a3 = [[0,0,0],[1,1,1],[0,1,0]],
-	a4 = [[1,1,1],[0,0,0],[1,0,1]],
+	a3 = [[0,0,0],[1,1,0],[0,1,0]],
+	a4 = [[1,0,1],[0,1,0],[1,0,0]],
 	emptyBoard = [[-1, -1, -1],[-1, -1, -1],[-1, -1, -1]];
 
 chai = require('./chai.js');
@@ -58,24 +58,130 @@ describe("Board Methods", function(){
 		expect(board.win).to.equal(1);
 	})
 
-	it.skip("checkDiag() #12", function(){
+	it("checkDiag() #12", function(){
 		board.arr = a0;
 		board.turn = 0;
+		expect(board.checkDiag(0,0)).to.equal(true);
+		expect(board.checkDiag(0,1)).to.equal(false);
 		expect(board.checkDiag(0,2)).to.equal(true);
+		expect(board.checkDiag(1,0)).to.equal(false);
 		expect(board.checkDiag(1,1)).to.equal(true);
-		expect(board.checkDiag(2,1)).to.equal(true);
+		expect(board.checkDiag(1,2)).to.equal(false);
+		expect(board.checkDiag(2,0)).to.equal(true);
+		expect(board.checkDiag(2,1)).to.equal(false);
+		expect(board.checkDiag(2,2)).to.equal(true);
+
+		board.arr = a4;
+		board.turn = 1
+		expect(board.checkDiag(0,0)).to.equal(false);
+		expect(board.checkDiag(0,1)).to.equal(false);
+		expect(board.checkDiag(0,2)).to.equal(true);
+		expect(board.checkDiag(1,0)).to.equal(false);
+		expect(board.checkDiag(1,1)).to.equal(true);
+		expect(board.checkDiag(1,2)).to.equal(false);
+		expect(board.checkDiag(2,0)).to.equal(true);
+		expect(board.checkDiag(2,1)).to.equal(false);
+		expect(board.checkDiag(2,2)).to.equal(false);
 	})
 
 	it("checkRow() #13", function(){
-		
+		board.arr = a3;
+		board.turn = 0;
+		expect(board.checkRow(0,0)).to.equal(false);
+		expect(board.checkRow(0,1)).to.equal(false);
+		expect(board.checkRow(0,2)).to.equal(true);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(true);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(true);
+
+		board.arr = a4;
+		expect(board.checkRow(0,0)).to.equal(false);
+		expect(board.checkRow(0,1)).to.equal(false);
+		expect(board.checkRow(0,2)).to.equal(false);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(false);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(false);
+
+		board.arr = a0;
+		expect(board.checkRow(0,0)).to.equal(true);
+		expect(board.checkRow(0,1)).to.equal(true);
+		expect(board.checkRow(0,2)).to.equal(true);
+		expect(board.checkRow(1,0)).to.equal(true);
+		expect(board.checkRow(1,1)).to.equal(true);
+		expect(board.checkRow(1,2)).to.equal(true);
+		expect(board.checkRow(2,0)).to.equal(true);
+		expect(board.checkRow(2,1)).to.equal(true);
+		expect(board.checkRow(2,2)).to.equal(true);
+
+		board.turn = 1;
+		expect(board.checkRow(0,0)).to.equal(false);
+		expect(board.checkRow(0,1)).to.equal(false);
+		expect(board.checkRow(0,2)).to.equal(false);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(false);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(false);
+
 	})
 
 	it("checkColumn() #14", function(){
-		
+		board.arr = a3;
+		board.turn = 0;
+		expect(board.checkRow(0,0)).to.equal(true);
+		expect(board.checkRow(0,1)).to.equal(true);
+		expect(board.checkRow(0,2)).to.equal(true);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(false);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(false);
+
+		board.arr = a4;
+		expect(board.checkRow(0,0)).to.equal(false);
+		expect(board.checkRow(0,1)).to.equal(false);
+		expect(board.checkRow(0,2)).to.equal(false);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(false);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(false);
+
+		board.arr = a0;
+		expect(board.checkRow(0,0)).to.equal(true);
+		expect(board.checkRow(0,1)).to.equal(true);
+		expect(board.checkRow(0,2)).to.equal(true);
+		expect(board.checkRow(1,0)).to.equal(true);
+		expect(board.checkRow(1,1)).to.equal(true);
+		expect(board.checkRow(1,2)).to.equal(true);
+		expect(board.checkRow(2,0)).to.equal(true);
+		expect(board.checkRow(2,1)).to.equal(true);
+		expect(board.checkRow(2,2)).to.equal(true);
+
+		board.turn = 1
+		expect(board.checkRow(0,0)).to.equal(false);
+		expect(board.checkRow(0,1)).to.equal(false);
+		expect(board.checkRow(0,2)).to.equal(false);
+		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,2)).to.equal(false);
+		expect(board.checkRow(2,0)).to.equal(false);
+		expect(board.checkRow(2,1)).to.equal(false);
+		expect(board.checkRow(2,2)).to.equal(false);
+
 	})
 });
 
-describe("Individual Check Functions:", function(){
+describe.skip("Individual Check Functions:", function(){
 	board = ticTacToe.new();
 
 	/*should check for:
@@ -112,7 +218,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.only("Individual checks on 0 space", function(){
+	describe("Individual checks on 0 space", function(){
 		board.arr = a0;
 		//set turn to 0, all should return true
 		board.turn = 0;
@@ -171,7 +277,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("Individual checks on 1 space", function(){
+	describe("Individual checks on 1 space", function(){
 		board.arr = a1;
 		//set as 1's turn (X)
 		board.turn = 1;
@@ -228,7 +334,7 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 	
-	describe.skip("Individual checks on out of bounds space", function(){
+	describe("Individual checks on out of bounds space", function(){
 		/*These should check that anything checked that would
 		be out of bounds returns as false
 		*/
