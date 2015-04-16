@@ -12,8 +12,10 @@ define([ "jquery" ],
 			this.el = $(domElement);
 			this.model = model;
 
-			// listener for changes in the model
+			
 			this.render();
+			
+			// listener for changes in the model
 			this.model.on("change", this.render, this);
 			this.model.on("error", this.render, this);
 
