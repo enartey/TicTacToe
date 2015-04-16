@@ -16,7 +16,8 @@ define([ "jquery" ],
 
 			// listener for changes in the model
 			this.model.on("change", this.render, this);
-			this.model.on("error", this.render, this);
+			this.model.on("winner", this.winner, this);
+			// this.model.on("error", this.errorSetting, this);
 
 			// listener for changes in the UI
 			this.el.on("click", "td", this.respondToChange.bind(this));
@@ -25,9 +26,16 @@ define([ "jquery" ],
 		Controller.prototype = {
 			render: function(){
 				// set the HTML of element to equal result of applying model
+				console.log(this);
 				this.el.html(this.model);
 			},
+			winner: function(){
+				// runs when there is a winning configuration on the board. Ends the game
+				console.log(this);
+				this.model.winner();
+			},
 			respondToChange: function(ev){
+				// responds to clicks on the screen by setting the box
 				var el, i, j;
 				el = $(ev.currentTarget);
 				i = parseInt(el.id[ 0 ]);
