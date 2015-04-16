@@ -1,3 +1,8 @@
+/*
+	This file contains the business logic of the application
+	It contains the constructor method used to initialize the game
+	and the prototype methods used in the game. 
+*/
 (function(define) {
     define(function (require) {
     /*
@@ -18,7 +23,7 @@
 	}
 
 	/*
-		for future implementation of multiple board sizes.
+		for testing future implementation of multiple board sizes.
 
 
 		Accepts the required board size from the user and
