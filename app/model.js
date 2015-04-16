@@ -263,8 +263,11 @@
 		set: function(i, j){
 			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
-				this.checkLanes(i,j);
-				this.trigger("change", this);
+				if (this.checkLanes(i,j)){
+					this.trigger("winner", this);
+				} else{
+					this.trigger("change", this);
+				}
 			} else {
 				console.log("Array position contains element");
 				throw new Error();
