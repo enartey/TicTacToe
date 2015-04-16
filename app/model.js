@@ -175,7 +175,7 @@
 				}
 				if (this.checkDL(i, j)){
 					acc += 1;
-					return true
+					return true;
 				}
 			}
 			if (this.checkDL(i, j)){
@@ -196,7 +196,7 @@
 			if (this.checkL(i, j)){
 					acc += 1;
 					if (this.checkL(i - 1, j)){
-						acc += 1
+						acc += 1;
 						return true;
 					}
 					if (this.checkR(i, j)){
@@ -263,10 +263,10 @@
 		set: function(i, j){
 			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
-				if (this.checkLanes(i,j)){
+				if (this.checkLanes(i, j)){
 					this.trigger("change", this);
 					this.trigger("winner", this);
-				} else{
+				} else {
 					this.trigger("change", this);
 					this.endTurn();
 				}
@@ -277,9 +277,9 @@
 		},
 		/*
 			Simple event system
-	    	1. this.events object initialized at constructor
-	    	2. on(event, handler, context)
-	    	3. trigger(event, data)
+			1. this.events object initialized at constructor
+			2. on(event, handler, context)
+			3. trigger(event, data)
 		*/
 	    on: function(event, handler, ctx) {
 	       var handle = { handler: handler, ctx: ctx || -1 };
