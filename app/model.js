@@ -72,78 +72,70 @@
 		},
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
-				return false;
-			}
 			i = i - 1;
 			j = j - 1;
+			if (this.isOutOfBounds(i, j)){
+				return false;
+			}
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the bottom right of the space in question.
 		checkDR: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
-				return false;
-			}
 			i = i + 1;
 			j = j - 1;
+			if (this.isOutOfBounds(i, j)){
+				return false;
+			}
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the top left of the space in question.
 		checkUR: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
-				return false;
-			}
 			i = i + 1;
 			j = j + 1;
+			if (this.isOutOfBounds(i, j)){
+				return false;
+			}
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space to the top left of the space in question.
 		checkUL: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
-				return false;
-			}
 			i = i - 1;
 			j = j + 1;
+			if (this.isOutOfBounds(i, j)){
+				return false;
+			}
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly to the left of the space in question.
 		checkL: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
+			i = i - 1;
+			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
-			i = i - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly to the right of the space in question.
 		checkR: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
+			i = i + 1;
+			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
-			i = i + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly below the space in question.
 		checkD: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
+			j = j - 1;
+			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
-			j = j - 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		// checks the space directly above the space in question.
 		checkU: function(i, j){
-			if (this.isOutOfBounds(i, j) ||
-				i === -1 || j === -1){
+			j = j + 1;
+			if (this.isOutOfBounds(i, j)){
 				return false;
 			}
-			j = j + 1;
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		winner: function(){
@@ -183,6 +175,10 @@
 					acc += 1;
 				}
 			}
+			if (acc >= this.boardSize){
+				return true;
+			}
+			return false;
 		},
 		/*
 			checks a row after a players plays to
@@ -193,7 +189,7 @@
 			if (this.checkL(i, j)){
 					acc += 1;
 					if (this.checkL(i - 1, j)){
-						acc += 1;
+						acc += 1
 					}
 					if (this.checkR(i, j)){
 						acc += 1;
@@ -205,9 +201,10 @@
 					acc += 1;
 				}
 			}
-			if (acc >= this.boardsize){
-				this.winner();
+			if (acc >= this.boardSize){
+				return true;
 			}
+			return false;
 		},
 		/*
 			checks a column after a player plays to
@@ -229,9 +226,10 @@
 					acc += 1;
 				}
 			}
-			if (acc >= this.boardsize){
-				this.winner();
+			if (acc >= this.boardSize){
+				return true;
 			}
+			return false;
 		}
 		},
 		/* checks all possible configurations of winning

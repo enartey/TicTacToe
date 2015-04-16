@@ -26,7 +26,7 @@ describe("Constructor", function(){
 	});
 });
 
-describe.skip("Board Methods", function(){
+describe("Board Methods", function(){
 	//i controls left/right axis
 	//j controls up/down
 	//(0,0) is bottom left spot on board
