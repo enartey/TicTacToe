@@ -22,6 +22,7 @@ require([ "jquery", "model", "controller" ],
          var controller;
          console.log("page loaded");
 
+         // create a controller instance with a model instance
          controller = new Controller("main", new Model());
       });
    });
