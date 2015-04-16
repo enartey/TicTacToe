@@ -35,11 +35,12 @@ describe("Board Methods", function(){
 		board = ticTacToe.new();
 	});
 
-	it.skip("isOutOfBounds() #20", function(){
+	it("isOutOfBounds() #20", function(){
 		expect(board.isOutOfBounds(-1, -1)).to.equal(true);
 		expect(board.isOutOfBounds(-10, -10)).to.equal(true);
 		expect(board.isOutOfBounds(-10, 1)).to.equal(true);
 		expect(board.isOutOfBounds(2, -10)).to.equal(true);
+		expect(board.isOutOfBounds(1, 2)).to.equal(true);
 		expect(board.isOutOfBounds(1, 5)).to.equal(true);
 		expect(board.isOutOfBounds(0, 23)).to.equal(true);
 		expect(board.isOutOfBounds(4, 2)).to.equal(true);
@@ -58,7 +59,11 @@ describe("Board Methods", function(){
 	})
 
 	it("checkDiag() #12", function(){
-
+		board.arr = a0;
+		board.turn = 0;
+		expect(board.checkDiag(0,2)).to.equal(true);
+		expect(board.checkDiag(1,1)).to.equal(true);
+		expect(board.checkDiag(2,1)).to.equal(true);
 	})
 
 	it("checkRow() #13", function(){
