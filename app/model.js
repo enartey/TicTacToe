@@ -231,9 +231,11 @@
 			per turn to see if there is a winner
 		*/
 		checkLanes: function(i, j){
-			this.checkRow();
-			this.checkColumn();
-			this.checkDiag();
+			if(this.checkRow() ||
+			this.checkColumn() ||
+			this.checkDiag()){
+				this.winner();
+			}
 		},
 		/*
 			ends the turn of the user who just played
