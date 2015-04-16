@@ -1,17 +1,18 @@
 /*
 	This file contains the business logic of the application
 	It contains the constructor method used to initialize the game
-	and the prototype methods used in the game. 
+	and the prototype methods used in the game.
 */
+
 (function(define) {
     define(function (require) {
     /*
-	Creates the array used by the game to
-	determine locate and notify the user when there is
-	a winner
+		Creates the array used by the game to
+		determine locate and notify the user when there is
+		a winner
 	*/
 
-	var index, model, proto, board, exportThis;
+	var model, proto, board;
 
 
 	/* creates two dimensional game board of any size using a nested array */
@@ -44,11 +45,12 @@
 
 	proto = {
 		initialize: function(boardSize){
-			var arr = [ [ -1, -1, -1 ], [ -1, -1, -1 ], [ -1, -1, -1 ] ],
-				i, j;
-			//THIS IS COMMENTED OUT BECAUSE OUR IMPLEMENTATION IS
-			//NOW ONLY FOR A BOARD OF SIZE 3
-			/*while (i < boardSize){
+			var arr = [ [ -1, -1, -1 ], [ -1, -1, -1 ], [ -1, -1, -1 ] ];
+			/*
+				THIS IS COMMENTED OUT BECAUSE OUR IMPLEMENTATION IS
+				NOW ONLY FOR A BOARD OF SIZE 3
+
+			while (i < boardSize){
 				j = 0;
 				arr[ i ] = [];
 				while (j < boardSize){
@@ -236,7 +238,7 @@
 			per turn to see if there is a winner
 		*/
 		checkLanes: function(i, j){
-			if(this.checkRow() ||
+			if (this.checkRow() ||
 			this.checkColumn() ||
 			this.checkDiag()){
 				this.winner();
@@ -253,13 +255,13 @@
 			attributef the player's turn
 		*/
 		set: function(i, j){
-			if (this.arr[ i ][ j ] == -1){
+			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
 			} else {
 				console.log("Array position contains element");
 				throw new Error();
 			}
-		},	
+		},
 		// Simple event system
 	    // 1. this.events object initialized at constructor
 	    // 2. on(event, handler, context)
@@ -285,8 +287,7 @@
 	};
 	});
 	}(// Help Node out by setting up define.
-    	 typeof module === 'object' && typeof define !== 'function'
-    	? function (factory) { module.exports = factory(require, exports, module); }
-    	: define
+		typeof module === "object" && typeof define !== "function"
+		? function (factory) { module.exports = factory(require, exports, module); }
+		: define
 	));
-
