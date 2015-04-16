@@ -1,3 +1,8 @@
+/*
+	This file corordinates between the model and user interface to
+	ensure that changes occuring on the page are reflected in the
+	model and changes occuring on the model are reflected in the UI
+*/
 define([ "jquery" ],
 
 	function($){
@@ -7,13 +12,13 @@ define([ "jquery" ],
 			this.el = $(domElement);
 			this.model = model;
 
+			// listener for changes in the model
 			this.render();
 			this.model.on("change", this.render, this);
 			this.model.on("error", this.render, this);
 
-			// If we end up using select and input in our work this will catch changes from the webpage
-			// this.el.on("change", "input", this.respondToChange.bind(this));
-			// this.el.on("change", "select", this.respondToChange.bind(this));
+			// listener for changes in the UI
+			this.el.on("change", "td", this.respondToChange.bind(this));
 		}
 
 		Controller.prototype = {
