@@ -12,15 +12,14 @@ define([ "jquery" ],
 			this.el = $(domElement);
 			this.model = model;
 
-			
 			this.render();
-			
+
 			// listener for changes in the model
 			this.model.on("change", this.render, this);
 			this.model.on("error", this.render, this);
 
 			// listener for changes in the UI
-			this.el.on("change", "td", this.respondToChange.bind(this));
+			this.el.on("click", "td", this.respondToChange.bind(this));
 		}
 
 		Controller.prototype = {
