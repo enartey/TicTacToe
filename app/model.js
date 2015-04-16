@@ -61,7 +61,7 @@
 		},
 		isOutOfBounds: function(i, j){
 			// returns true if i or j are out of bounds
-			return i < 0 || j < 0 || i > this.boardsize || j > this.boardsize;
+			return i < 0 || j < 0 || i >= this.boardSize || j >= this.boardSize;
 		},
 		// checks the space to the bottom left of the space in question.
 		checkDL: function(i, j){

@@ -58,7 +58,7 @@ describe("Board Methods", function(){
 		expect(board.win).to.equal(1);
 	})
 
-	it("checkDiag() #12", function(){
+	it.skip("checkDiag() #12", function(){
 		board.arr = a0;
 		board.turn = 0;
 		expect(board.checkDiag(0,2)).to.equal(true);
