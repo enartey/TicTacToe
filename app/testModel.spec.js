@@ -112,11 +112,13 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("Individual checks on 0 space", function(){
+	describe.only("Individual checks on 0 space", function(){
 		board.arr = a0;
 		//set turn to 0, all should return true
 		board.turn = 0;
+		console.log("BEFORE", board.arr);
 		it("checkDL() #4", function(){
+			console.log("AFTER", board.arr);
 			expect(board.checkDL(1,1)).to.equal(true);
 		});
 		it("checkDR() #5", function(){
@@ -141,7 +143,7 @@ describe("Individual Check Functions:", function(){
 			expect(board.checkUL(1,1)).to.equal(true);
 		});
 
-		//set turn to 1, all should return false
+		//set turn to 1, with board of 0, all should return false
 		board.turn = 1;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
