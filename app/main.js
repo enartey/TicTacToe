@@ -19,10 +19,16 @@ require.config({
 require([ "jquery", "model", "controller" ],
    function($, Model, Controller){
       $(function(){
-         var controller;
+         var controller, model;
+
          console.log("page loaded");
 
+         // create new instance of model
+         model = Model.new();
+         console.log("model: ", model);
+
          // create a controller instance with a model instance
-         controller = new Controller("main", new Model());
+         controller = new Controller("main", model);
+         console.log("controller: ", controller);
       });
    });
