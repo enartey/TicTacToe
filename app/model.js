@@ -152,31 +152,38 @@
 				acc += 1;
 				if (this.checkUL(i - 1, j + 1)){
 					acc += 1;
+					return true;
 				}
 				if (this.checkDR(i, j)){
 					acc += 1;
+					return true;
 				}
 			}
 			if (this.checkDR(i, j)){
 				acc += 1;
 				if (this.checkDR(i + 1, j - 1)){
 					acc += 1;
+					return true;
 				}
 			}
+			acc = 0;
 			if (this.checkUR(i, j)){
 				acc += 1;
 				if (this.checkUR(i + 1, j + 1)){
 					acc += 1;
+					return true;
+				}
+				if (this.checkDL(i, j)){
+					acc += 1;
+					return true
 				}
 			}
 			if (this.checkDL(i, j)){
 				acc += 1;
 				if (this.checkDL(i - 1, j - 1)){
 					acc += 1;
+					return true;
 				}
-			}
-			if (acc >= this.boardSize){
-				return true;
 			}
 			return false;
 		},

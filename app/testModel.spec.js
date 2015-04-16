@@ -81,7 +81,6 @@ describe("Board Methods", function(){
 		expect(board.checkDiag(1,2)).to.equal(false);
 		expect(board.checkDiag(2,0)).to.equal(true);
 		expect(board.checkDiag(2,1)).to.equal(false);
-		expect(board.checkDiag(2,2)).to.equal(false);
 	})
 
 	it("checkRow() #13", function(){
