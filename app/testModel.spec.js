@@ -40,7 +40,7 @@ describe("Board Methods", function(){
 		expect(board.isOutOfBounds(-10, -10)).to.equal(true);
 		expect(board.isOutOfBounds(-10, 1)).to.equal(true);
 		expect(board.isOutOfBounds(2, -10)).to.equal(true);
-		expect(board.isOutOfBounds(1, 2)).to.equal(true);
+		expect(board.isOutOfBounds(1, 2)).to.equal(false);
 		expect(board.isOutOfBounds(1, 5)).to.equal(true);
 		expect(board.isOutOfBounds(0, 23)).to.equal(true);
 		expect(board.isOutOfBounds(4, 2)).to.equal(true);
