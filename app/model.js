@@ -264,6 +264,7 @@
 			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
 				if (this.checkLanes(i,j)){
+					this.trigger("change", this);
 					this.trigger("winner", this);
 				} else{
 					this.trigger("change", this);
