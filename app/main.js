@@ -28,7 +28,7 @@ require([ "jquery", "model", "controller" ],
          console.log("model: ", model);
 
          // create a controller instance with a model instance
-         controller = new Controller("main", model);
+         controller = new Controller("gameBoard", model);
          console.log("controller: ", controller);
       });
    });
