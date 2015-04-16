@@ -133,48 +133,48 @@ describe("Board Methods", function(){
 	it("checkColumn() #14", function(){
 		board.arr = a3;
 		board.turn = 0;
-		expect(board.checkRow(0,0)).to.equal(true);
-		expect(board.checkRow(0,1)).to.equal(true);
-		expect(board.checkRow(0,2)).to.equal(true);
-		expect(board.checkRow(1,0)).to.equal(false);
-		expect(board.checkRow(1,1)).to.equal(false);
-		expect(board.checkRow(1,2)).to.equal(false);
-		expect(board.checkRow(2,0)).to.equal(false);
-		expect(board.checkRow(2,1)).to.equal(false);
-		expect(board.checkRow(2,2)).to.equal(false);
+		expect(board.checkColumn(0,0)).to.equal(true);
+		expect(board.checkColumn(0,1)).to.equal(true);
+		expect(board.checkColumn(0,2)).to.equal(true);
+		expect(board.checkColumn(1,0)).to.equal(false);
+		expect(board.checkColumn(1,1)).to.equal(false);
+		expect(board.checkColumn(1,2)).to.equal(false);
+		expect(board.checkColumn(2,0)).to.equal(false);
+		expect(board.checkColumn(2,1)).to.equal(true);
+		expect(board.checkColumn(2,2)).to.equal(false);
 
 		board.arr = a4;
-		expect(board.checkRow(0,0)).to.equal(false);
-		expect(board.checkRow(0,1)).to.equal(false);
-		expect(board.checkRow(0,2)).to.equal(false);
-		expect(board.checkRow(1,0)).to.equal(false);
-		expect(board.checkRow(1,1)).to.equal(false);
-		expect(board.checkRow(1,2)).to.equal(false);
-		expect(board.checkRow(2,0)).to.equal(false);
-		expect(board.checkRow(2,1)).to.equal(false);
-		expect(board.checkRow(2,2)).to.equal(false);
+		expect(board.checkColumn(0,0)).to.equal(false);
+		expect(board.checkColumn(0,1)).to.equal(false);
+		expect(board.checkColumn(0,2)).to.equal(false);
+		expect(board.checkColumn(1,0)).to.equal(false);
+		expect(board.checkColumn(1,1)).to.equal(true);
+		expect(board.checkColumn(1,2)).to.equal(false);
+		expect(board.checkColumn(2,0)).to.equal(true);
+		expect(board.checkColumn(2,1)).to.equal(false);
+		expect(board.checkColumn(2,2)).to.equal(false);
 
 		board.arr = a0;
-		expect(board.checkRow(0,0)).to.equal(true);
-		expect(board.checkRow(0,1)).to.equal(true);
-		expect(board.checkRow(0,2)).to.equal(true);
-		expect(board.checkRow(1,0)).to.equal(true);
-		expect(board.checkRow(1,1)).to.equal(true);
-		expect(board.checkRow(1,2)).to.equal(true);
-		expect(board.checkRow(2,0)).to.equal(true);
-		expect(board.checkRow(2,1)).to.equal(true);
-		expect(board.checkRow(2,2)).to.equal(true);
+		expect(board.checkColumn(0,0)).to.equal(true);
+		expect(board.checkColumn(0,1)).to.equal(true);
+		expect(board.checkColumn(0,2)).to.equal(true);
+		expect(board.checkColumn(1,0)).to.equal(true);
+		expect(board.checkColumn(1,1)).to.equal(true);
+		expect(board.checkColumn(1,2)).to.equal(true);
+		expect(board.checkColumn(2,0)).to.equal(true);
+		expect(board.checkColumn(2,1)).to.equal(true);
+		expect(board.checkColumn(2,2)).to.equal(true);
 
 		board.turn = 1
-		expect(board.checkRow(0,0)).to.equal(false);
-		expect(board.checkRow(0,1)).to.equal(false);
-		expect(board.checkRow(0,2)).to.equal(false);
-		expect(board.checkRow(1,0)).to.equal(false);
-		expect(board.checkRow(1,1)).to.equal(false);
-		expect(board.checkRow(1,2)).to.equal(false);
-		expect(board.checkRow(2,0)).to.equal(false);
-		expect(board.checkRow(2,1)).to.equal(false);
-		expect(board.checkRow(2,2)).to.equal(false);
+		expect(board.checkColumn(0,0)).to.equal(false);
+		expect(board.checkColumn(0,1)).to.equal(false);
+		expect(board.checkColumn(0,2)).to.equal(false);
+		expect(board.checkColumn(1,0)).to.equal(false);
+		expect(board.checkColumn(1,1)).to.equal(false);
+		expect(board.checkColumn(1,2)).to.equal(false);
+		expect(board.checkColumn(2,0)).to.equal(false);
+		expect(board.checkColumn(2,1)).to.equal(false);
+		expect(board.checkColumn(2,2)).to.equal(false);
 
 	})
 });

@@ -223,21 +223,21 @@
 				acc += 1;
 				if (this.checkD(i, j - 1)){
 					acc += 1;
+					return true;
 				}
 				if (this.checkU(i, j)){
 					acc += 1;
+					return true;
 				}
+			}
 			if (this.checkU(i, j)){
 				acc += 1;
 				if (this.checkU(i, j + 1)){
 					acc += 1;
+					return true;
 				}
 			}
-			if (acc >= this.boardSize){
-				return true;
-			}
 			return false;
-		}
 		},
 		/* checks all possible configurations of winning
 			per turn to see if there is a winner
