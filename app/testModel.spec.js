@@ -58,6 +58,18 @@ describe("Board Methods", function(){
 		expect(board.win).to.equal(1);
 	})
 
+	it("endTurn() #18", function(){
+		expect(board.turn).to.equal(0);
+		board.endTurn();
+		expect(board.turn).to.equal(1);
+		board.endTurn();
+		expect(board.turn).to.equal(0);
+		board.endTurn();
+		expect(board.turn).to.equal(1);
+		board.endTurn();
+		expect(board.turn).to.equal(0);
+	})
+
 	it("checkDiag() #12", function(){
 		board.arr = a0;
 		board.turn = 0;
@@ -175,6 +187,10 @@ describe("Board Methods", function(){
 		expect(board.checkColumn(2,0)).to.equal(false);
 		expect(board.checkColumn(2,1)).to.equal(false);
 		expect(board.checkColumn(2,2)).to.equal(false);
+
+	})
+
+	it("checkLanes() #17", function(){
 
 	})
 });
