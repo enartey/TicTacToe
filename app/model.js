@@ -246,8 +246,9 @@
 			if (this.checkRow() ||
 			this.checkColumn() ||
 			this.checkDiag()){
-				this.winner();
+				return true;
 			}
+			return false;
 		},
 		/*
 			ends the turn of the user who just played
@@ -262,6 +263,7 @@
 		set: function(i, j){
 			if (this.arr[ i ][ j ] === -1){
 				this.arr[ i ][ j ] = this.turn;
+				this.checkLanes(i,j);
 				this.trigger("change", this);
 			} else {
 				console.log("Array position contains element");
