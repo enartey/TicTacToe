@@ -268,11 +268,12 @@
 				throw new Error();
 			}
 		},
-		// Simple event system
-	    // 1. this.events object initialized at constructor
-	    // 2. on(event, handler, context)
-	    // 3. trigger(event, data)
-
+		/*
+			Simple event system
+	    	1. this.events object initialized at constructor
+	    	2. on(event, handler, context)
+	    	3. trigger(event, data)
+		*/
 	    on: function(event, handler, ctx) {
 	       var handle = { handler: handler, ctx: ctx || -1 };
 	       this.events[ event ] = this.events[ event ] || [];
