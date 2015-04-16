@@ -11,9 +11,7 @@ ticTacToe = require('./model.js');
 
 describe("Constructor", function(){
 	"use strict";
-	beforeEach(function(){
-		board = ticTacToe.new();
-	});
+	board = ticTacToe.new();
 
 	it("creates -1 array", function(){
 		expect(board.arr).to.deep.equal(emptyBoard);
@@ -26,7 +24,7 @@ describe("Constructor", function(){
 	});
 });
 
-describe("Board Methods", function(){
+describe.skip("Board Methods", function(){
 	//i controls left/right axis
 	//j controls up/down
 	//(0,0) is bottom left spot on board
@@ -181,7 +179,8 @@ describe("Board Methods", function(){
 	})
 });
 
-describe.skip("Individual Check Functions:", function(){
+describe("Individual Check Functions:", function(){
+	"use strict";
 	board = ticTacToe.new();
 
 	/*should check for:
@@ -190,7 +189,9 @@ describe.skip("Individual Check Functions:", function(){
 	- 0 (O) [use a0]
 	- 1 (X) [use a1]
 	*/
-	describe("Individual checks on empty space", function(){
+	describe.skip("Individual checks on empty space", function(){
+		"use strict";
+
 		board.arr = emptyBoard;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
@@ -218,7 +219,8 @@ describe.skip("Individual Check Functions:", function(){
 		});
 	});
 
-	describe("Individual checks on 0 space", function(){
+	describe.skip("Individual checks on 0 space", function(){
+		"use strict";
 		board.arr = a0;
 		//set turn to 0, all should return true
 		board.turn = 0;
@@ -277,7 +279,7 @@ describe.skip("Individual Check Functions:", function(){
 		});
 	});
 
-	describe("Individual checks on 1 space", function(){
+	describe.skip("Individual checks on 1 space", function(){
 		board.arr = a1;
 		//set as 1's turn (X)
 		board.turn = 1;
@@ -334,7 +336,7 @@ describe.skip("Individual Check Functions:", function(){
 		});
 	});
 	
-	describe("Individual checks on out of bounds space", function(){
+	describe.skip("Individual checks on out of bounds space", function(){
 		/*These should check that anything checked that would
 		be out of bounds returns as false
 		*/

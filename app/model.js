@@ -245,7 +245,7 @@
 		},
 		/*
 			sets the value of the index with the
-			attributes of the player's turn
+			attributef the player's turn
 		*/
 		set: function(i, j){
 			if (this.arr[ i ][ j ] == -1){
