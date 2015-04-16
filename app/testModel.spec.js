@@ -89,7 +89,7 @@ describe("Board Methods", function(){
 		expect(board.checkRow(0,0)).to.equal(false);
 		expect(board.checkRow(0,1)).to.equal(false);
 		expect(board.checkRow(0,2)).to.equal(true);
-		expect(board.checkRow(1,0)).to.equal(false);
+		expect(board.checkRow(1,0)).to.equal(true);
 		expect(board.checkRow(1,1)).to.equal(false);
 		expect(board.checkRow(1,2)).to.equal(true);
 		expect(board.checkRow(2,0)).to.equal(false);
@@ -99,9 +99,8 @@ describe("Board Methods", function(){
 		board.arr = a4;
 		expect(board.checkRow(0,0)).to.equal(false);
 		expect(board.checkRow(0,1)).to.equal(false);
-		expect(board.checkRow(0,2)).to.equal(false);
 		expect(board.checkRow(1,0)).to.equal(false);
-		expect(board.checkRow(1,1)).to.equal(false);
+		expect(board.checkRow(1,1)).to.equal(true);
 		expect(board.checkRow(1,2)).to.equal(false);
 		expect(board.checkRow(2,0)).to.equal(false);
 		expect(board.checkRow(2,1)).to.equal(false);

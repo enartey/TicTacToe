@@ -197,19 +197,19 @@
 					acc += 1;
 					if (this.checkL(i - 1, j)){
 						acc += 1
+						return true;
 					}
 					if (this.checkR(i, j)){
 						acc += 1;
+						return true;
 					}
 				}
 			if (this.checkR(i, j)){
 				acc += 1;
 				if (this.checkR(i + 1, j)){
 					acc += 1;
+					return true;
 				}
-			}
-			if (acc >= this.boardSize){
-				return true;
 			}
 			return false;
 		},
