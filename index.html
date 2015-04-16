@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TicTacToe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="svg.js"></script>
+	<!-- <script type="text/javascript" src="svg.js"></script> -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 </head>
 
@@ -13,19 +13,19 @@
 	<div id="tab">
 	<table id="gameBoard" border = "1px"; cellspacing="0"; cellpadding="5%"; align="center">
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td id = "20"></td>
+			<td id = "21"></td>
+			<td id = "22"></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td id = "10"></td>
+			<td id = "11"></td>
+			<td id = "12"></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td id = "00"></td>
+			<td id = "01"></td>
+			<td id = "02"></td>
 		</tr>
 	</table>
 
@@ -34,9 +34,15 @@
 		$("td").click(function () {
    			$(this).css('background-image', 'url(x.png)');
 		});
-	}); </script>
-</div>
+		var tdID = $("td").id;
+	}); 
+	</script>
+	</div>
+
+
+
 	<!--
+
 	SWITCHING TO TABLE IMPLEMENTATION IN PREFERENCE TO SVG BASED ON TIME REQUIREMENT
 
 	<div id="SVG">
@@ -60,7 +66,8 @@
 		var rect = draw.rect()
 		</script>
 	</div>
--->
+	-->
+
 	<script data-main="app/main" src="require.js"></script>
 </body>
 
