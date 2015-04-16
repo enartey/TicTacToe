@@ -141,6 +141,7 @@
 		winner: function(){
 			// code to end/reset the game
 			this.win = 1;
+			this.new();
 		},
 		/*
 			checks diagonally after a player plays to find out
