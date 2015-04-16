@@ -11,7 +11,9 @@ ticTacToe = require('./model.js');
 
 describe("Constructor", function(){
 	"use strict";
-	board = ticTacToe.new();
+	beforeEach(function(){
+		board = ticTacToe.new();
+	})
 
 	it("creates -1 array", function(){
 		expect(board.arr).to.deep.equal(emptyBoard);
@@ -181,7 +183,9 @@ describe.skip("Board Methods", function(){
 
 describe("Individual Check Functions:", function(){
 	"use strict";
-	board = ticTacToe.new();
+	beforeEach(function(){
+		board = ticTacToe.new();
+	});
 
 	/*should check for:
 	- out of bounds
@@ -189,10 +193,12 @@ describe("Individual Check Functions:", function(){
 	- 0 (O) [use a0]
 	- 1 (X) [use a1]
 	*/
-	describe.skip("Individual checks on empty space", function(){
+	describe("Individual checks on empty space", function(){
 		"use strict";
+		beforeEach(function(){
+			board = ticTacToe.new();
+		});
 
-		board.arr = emptyBoard;
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
 		});
@@ -219,14 +225,16 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("Individual checks on 0 space", function(){
+	describe("Checks on 0 space, should be true", function(){
 		"use strict";
-		board.arr = a0;
-		//set turn to 0, all should return true
-		board.turn = 0;
-		console.log("BEFORE", board.arr);
+		beforeEach(function(){
+			board = ticTacToe.new();
+			board.arr = a0;
+		});
+
+		//console.log("BEFORE", board.arr);
 		it("checkDL() #4", function(){
-			console.log("AFTER", board.arr);
+			//console.log("AFTER", board.arr);
 			expect(board.checkDL(1,1)).to.equal(true);
 		});
 		it("checkDR() #5", function(){
@@ -250,9 +258,16 @@ describe("Individual Check Functions:", function(){
 		it("checkUL() #11", function(){
 			expect(board.checkUL(1,1)).to.equal(true);
 		});
+	});
 
+	describe("Checks on 0 space, should be false", function(){
 		//set turn to 1, with board of 0, all should return false
-		board.turn = 1;
+		beforeEach(function(){
+			board = ticTacToe.new();
+			board.arr = a0;
+			board.turn = 1;
+		});
+
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
 		});
@@ -279,10 +294,13 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 
-	describe.skip("Individual checks on 1 space", function(){
-		board.arr = a1;
-		//set as 1's turn (X)
-		board.turn = 1;
+	describe("Checks on 1 space, should be true", function(){
+		beforeEach(function(){
+			board = ticTacToe.new();
+			board.arr = a1;
+			board.turn = 1;
+		});
+
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(true);
 		});
@@ -309,7 +327,13 @@ describe("Individual Check Functions:", function(){
 		});
 
 		//set as 0's turn (O)
-		board.turn = 0;
+	});
+	describe("Checks on 1 space, should be false", function(){
+		beforeEach(function(){
+			board = ticTacToe.new();
+			board.arr = a1;
+			board.turn = 0;
+		});
 		it("checkDL() #4", function(){
 			expect(board.checkDL(1,1)).to.equal(false);
 		});
@@ -336,12 +360,16 @@ describe("Individual Check Functions:", function(){
 		});
 	});
 	
-	describe.skip("Individual checks on out of bounds space", function(){
+	describe("Individual checks on out of bounds space", function(){
 		/*These should check that anything checked that would
 		be out of bounds returns as false
 		*/
-		board.arr = a1;
-		board.turn = 1;
+		beforeEach(function(){
+			board = ticTacToe.new();
+			board.arr = a1;
+			board.turn = 1;
+		});
+
 		it("checkDL() #4", function(){
 			expect(board.checkDL(0,0)).to.equal(false);
 		});
