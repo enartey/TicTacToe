@@ -56,6 +56,18 @@ describe("Board Methods", function(){
 		board.winner();
 		expect(board.win).to.equal(1);
 	})
+
+	it("checkDiag() #12", function(){
+
+	})
+
+	it("checkRow() #13", function(){
+		
+	})
+
+	it("checkColumn() #14", function(){
+		
+	})
 });
 
 describe("Individual Check Functions:", function(){
