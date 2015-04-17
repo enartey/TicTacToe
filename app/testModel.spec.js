@@ -226,7 +226,7 @@ describe("Board Methods", function(){
 		board.set(0,0);
 		expect(board.arr[0][0]).to.equal(0);
 		board.set(1,1);
-		expect(board.arr[1][1]).to.equal(0);
+		expect(board.arr[1][1]).to.equal(1);
 		board.set(2,2);
 		expect(board.arr[2][2]).to.equal(0);
 	})
