@@ -16,9 +16,9 @@
 
 
 	/* creates two dimensional game board of any size using a nested array */
-	function model(){
+	function Model(){
 		board = Object.create(proto);
-		this.events = {};
+		board.events = {};
 		board.initialize(3);
 		return board;
 	}
@@ -284,7 +284,7 @@
 			3. trigger(event, data)
 		*/
 	    on: function(event, handler, ctx) {
-	       var handle = { handler: handler, ctx: ctx || -1 };
+	       var handle = { handler: handler, ctx: ctx || null };
 	       this.events[ event ] = this.events[ event ] || [];
 	       this.events[ event ].push(handle);
 	       return handle;
@@ -299,7 +299,7 @@
 	    }
 	};
 	return {
-		new: model
+		new: Model
 	};
 	});
 	}(// Help Node out by setting up define.
