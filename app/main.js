@@ -16,6 +16,7 @@ require.config({
    }
 });
 
+// loads jquery, model and controller using require
 require([ "jquery", "model", "controller" ],
    function($, Model, Controller){
       $(function(){
