@@ -52,12 +52,6 @@ describe("Board Methods", function(){
 		expect(board.isOutOfBounds(1, 2)).to.equal(false);
 	});
 
-	it("Winner() #15", function(){
-		expect(board.win).to.equal(0);
-		board.winner();
-		expect(board.win).to.equal(1);
-	})
-
 	it("endTurn() #18", function(){
 		expect(board.turn).to.equal(0);
 		board.endTurn();
