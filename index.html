@@ -5,7 +5,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>TicTacToe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- <script type="text/javascript" src="svg.js"></script> -->
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
 </head>
 
@@ -13,7 +12,7 @@
 	<div id="tab">
 	<table id="gameBoard" border = "1px"; cellspacing="0"; cellpadding="5%"; align="center">
 		<tr>
-			<td data-id = "20"></td>
+			<td id = "20" onclick="myFunction()"></td>
 			<td data-id = "21"></td>
 			<td data-id = "22"></td>
 		</tr>
@@ -30,43 +29,10 @@
 	</table>
 
 	<script>
-	$(function(){
-		$("td").click(function () {
-   			$(this).css('background-image', 'url(x.png)');
-		});
-		var tdID = $("td").id;
-	}); 
+	function myFunction(){
+		return 20;
+	}
 	</script>
-	</div>
-
-
-
-	<!--
-
-	SWITCHING TO TABLE IMPLEMENTATION IN PREFERENCE TO SVG BASED ON TIME REQUIREMENT
-
-	<div id="SVG">
-		<script>
-		var draw = SVG('SVG').size(800,600);
-
-		// vertical lines for board
-		var line = draw.line(300,50,300,600).attr({'stroke-width': 5, stroke: 'red', id: 'v1'});
-		var line = draw.line(505, 50, 505, 600).attr({'stroke-width': 5, stroke: 'red', id: 'v2'});
-
-		// horizontal lines for board
-		var line = draw.line(100, 200, 705, 200).attr({'stroke-width': 5, stroke: 'red', id: 'h1'});
-		var line = draw.line(100, 400, 705, 400).attr({'stroke-width': 5, stroke: 'red', id: 'h1'});
-
-		// 'boxes' that contain 'x' or 'o' based on which player clicks in square in first row
-		var rect = draw.rect(200,150).attr({fill: 'blue', id:'00'}).dmove(100,50);
-		var rect = draw.rect(200,150).attr({fill: 'orange', id:'01'}).dmove(303,50);
-		var rect = draw.rect(200,150).attr({fill: 'pink', id:'02'}).dmove(505,50);
-
-		// 'boxes' that contain 'x' or 'o' in second row
-		var rect = draw.rect()
-		</script>
-	</div>
-	-->
 
 	<script data-main="app/main" src="require.js"></script>
 </body>
