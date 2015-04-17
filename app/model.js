@@ -23,43 +23,10 @@
 		return board;
 	}
 
-	/*
-		for testing future implementation of multiple board sizes.
-
-
-		Accepts the required board size from the user and
-		uses it to create the board
-		function size(){
-		var prompt = require("prompt");
-
-		// Start the prompt
-		prompt.start();
-
-		// Get board size from the user
-		prompt.get([ "boardsize" ], function(result){
-			console.log("boardsize: " + result.boardsize);
-		});
-		return result.boardsize;
-	}
-	*/
 
 	proto = {
 		initialize: function(boardSize){
 			var arr = [ [ -1, -1, -1 ], [ -1, -1, -1 ], [ -1, -1, -1 ] ];
-			/*
-				THIS IS COMMENTED OUT BECAUSE OUR IMPLEMENTATION IS
-				NOW ONLY FOR A BOARD OF SIZE 3
-
-			while (i < boardSize){
-				j = 0;
-				arr[ i ] = [];
-				while (j < boardSize){
-					arr[ i ][ j ] = -1;
-					j += 1;
-				}
-				i += 1;
-			}
-			*/
 			this.arr = arr;
 			this.turn = 0;
 			this.boardSize = boardSize;
