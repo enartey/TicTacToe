@@ -9,6 +9,7 @@ chai = require('./chai.js');
 expect = chai.expect;
 ticTacToe = require('./model.js');
 
+// Test that constructor is working properly
 describe("Constructor", function(){
 	"use strict";
 	beforeEach(function(){
@@ -240,9 +241,12 @@ describe("Individual Check Functions:", function(){
 
 	/*should check for:
 	- out of bounds
-	- blank [use emptyArr]
+	- blank [use emptyBoard]
 	- 0 (O) [use a0]
 	- 1 (X) [use a1]
+
+	- Run the tests from the center spot on board to 
+		prevent any out-of-bounds issues
 	*/
 	describe("Individual checks on empty space", function(){
 		"use strict";
@@ -283,9 +287,7 @@ describe("Individual Check Functions:", function(){
 			board.arr = a0;
 		});
 
-		//console.log("BEFORE", board.arr);
 		it("checkDL() #4", function(){
-			//console.log("AFTER", board.arr);
 			expect(board.checkDL(1,1)).to.equal(true);
 		});
 		it("checkDR() #5", function(){
@@ -346,6 +348,7 @@ describe("Individual Check Functions:", function(){
 	});
 
 	describe("Checks on 1 space, should be true", function(){
+		//Board full of 1's, all checks should return true
 		beforeEach(function(){
 			board = ticTacToe.new();
 			board.arr = a1;
@@ -380,6 +383,7 @@ describe("Individual Check Functions:", function(){
 		//set as 0's turn (O)
 	});
 	describe("Checks on 1 space, should be false", function(){
+		//Board of 1's should return false because it's 0's turn
 		beforeEach(function(){
 			board = ticTacToe.new();
 			board.arr = a1;
@@ -412,7 +416,8 @@ describe("Individual Check Functions:", function(){
 	});
 	
 	describe("Individual checks on out of bounds space", function(){
-		/*These should check that anything checked that would
+		/*
+		These should check that anything checked that would
 		be out of bounds returns as false
 		*/
 		beforeEach(function(){
