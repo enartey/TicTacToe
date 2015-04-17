@@ -23,8 +23,11 @@
 		return board;
 	}
 
-
+	/*
+		proto methods go here
+	*/
 	proto = {
+		// initializes the board in a double nested array
 		initialize: function(boardSize){
 			var arr = [ [ -1, -1, -1 ], [ -1, -1, -1 ], [ -1, -1, -1 ] ];
 			this.arr = arr;
@@ -33,6 +36,7 @@
 			this.win = 0;
 			return this;
 		},
+		// checks whether any of the functions are out of bounds
 		isOutOfBounds: function(i, j){
 			// returns true if i or j are out of bounds
 			return i < 0 || j < 0 || i >= this.boardSize || j >= this.boardSize;
@@ -106,7 +110,7 @@
 			return this.arr[ i ][ j ] === this.turn;
 		},
 		winner: function(){
-			// code to end/reset the game
+			// code to end or reset the game
 			this.win = 1;
 			this.initialize();
 			this.trigger("change", this);
