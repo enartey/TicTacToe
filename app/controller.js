@@ -9,18 +9,23 @@ define([ "jquery" ],
 		// var Controller;
 
 		function Controller(domElement, model){
-			this.el = $(domElement);
+			this.el = $("#" + domElement);
+			console.log("el: ", this.el);
 			this.model = model;
 
-			this.render();
+			// this.render();
 
-			// listener for changes in the model
+			// // listener for changes in the model
 			this.model.on("change", this.render, this);
 			this.model.on("winner", this.winner, this);
-			this.model.on("error", this.errorSetting, this);
 
 			// listener for changes in the UI
+			// var that = this;
+			// this.el.on("click", "td", function(){
+			// 	console.log("el: ",that.el);
+			// 	that.respondToChange(that.el);
 			this.el.on("click", "td", this.respondToChange.bind(this));
+			// });
 		}
 
 		Controller.prototype = {
@@ -37,8 +42,8 @@ define([ "jquery" ],
 			respondToChange: function(ev){
 				// responds to clicks on the screen by setting the box
 				var el, i, j;
+				console.log($(ev.currentTarget));
 				el = $(ev.currentTarget);
-				console.log(el);
 				i = parseInt(el.id[ 0 ]);
 				j = parseInt(el.id[ 1 ]);
 				this.model.set(i, j);
