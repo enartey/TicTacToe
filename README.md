@@ -18,9 +18,9 @@ Players take turns clicking tic-tac-toe spaces on the board to place their piece
 
 initialize() : Initializes the board object and gives it a nested array of all -1, representing empty board spaces. Turn is set to 0, to indicate that O is player 1 and moves first. BoardSize is set to the passed parameter, which for this project we are passing a board size of 3. The win property is set to 0, indicating that there is no winner yet.The object, this, is returned.
 
-isOutOfBounds(i, j) : Takes coordinates i and j and returns true if they fall OUT OF BOUNDS and cannot be played on.
+```isOutOfBounds(i, j)``` : Takes coordinates i and j and returns true if they fall OUT OF BOUNDS and cannot be played on.
 
-checkXX(i, j) : Eight individual check functions are written, which return true if the check in that direction has the same piece that is in the position given, and false otherwise. The checks are as follows:
+```checkXX(i, j)``` : Eight individual check functions are written, which return true if the check in that direction has the same piece that is in the position given, and false otherwise. The checks are as follows:
 
 checkDL(i, j) : Down and Left
 checkDR(i, j) : Down and Right
