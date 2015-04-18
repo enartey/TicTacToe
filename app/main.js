@@ -1,6 +1,6 @@
 /*
 	Main file that loads things.
-	Called from require.js
+	Called from require.js.
 */
 
 require.config({
